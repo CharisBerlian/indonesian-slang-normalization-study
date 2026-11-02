@@ -1,0 +1,20 @@
+{
+  "prdec_version": "10.17632/574v66hf2v.1",
+  "indonlu_commit": "ce728f6926a36174b9923dfe49d6a6839b6e9bb7",
+  "alay_commit": "c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b",
+  "indobert_revision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+  "files": [
+    {"path":"prdec.csv","url":"https://data.mendeley.com/public-files/datasets/574v66hf2v/files/f258d159-c678-42f1-9634-edf091a0b1f3/file_downloaded","sha256":"1dfdde6bb169ad57aab4211ecf45a75a4111b774ab43932f6d39c349bfd92bde"},
+    {"path":"smsa_train.tsv","url":"https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/train_preprocess.tsv"},
+    {"path":"smsa_valid.tsv","url":"https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/valid_preprocess.tsv"},
+    {"path":"smsa_test.tsv","url":"https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/test_preprocess.tsv"},
+    {"path":"alay.csv","url":"https://raw.githubusercontent.com/nasalsabila/kamus-alay/c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b/colloquial-indonesian-lexicon.csv"},
+    {"path":"alay_README.md","url":"https://raw.githubusercontent.com/nasalsabila/kamus-alay/c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b/README.md"},
+    {"path":"indonlu_LICENSE","url":"https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/LICENSE"},
+    {"path":"indonlu_README.md","url":"https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/README.md"},
+    {"path":"bert_vocab.txt","url":"https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/vocab.txt"},
+    {"path":"bert_tokenizer_config.json","url":"https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/tokenizer_config.json"},
+    {"path":"bert_special_tokens_map.json","url":"https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/special_tokens_map.json"},
+    {"path":"bert_README.md","url":"https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/README.md"}
+  ]
+}

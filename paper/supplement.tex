@@ -1,0 +1,118 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{array}
+\begin{document}
+\title{Supplement: Dictionary-Based Slang Normalization for Indonesian Sentiment Classification}
+\author{\IEEEauthorblockN{Working Draft}\IEEEauthorblockA{Authors and affiliations to be confirmed}}
+\maketitle
+These tables accompany the main manuscript and use its frozen held-out predictions. $O/N$ denotes training on original inputs and evaluating normalized inputs; the first symbol always denotes the training condition. Scores for the three IndoBERT seeds use the same held-out reviews and are not independent test samples. No additional model was trained or selected for these tables.
+\renewcommand{\thetable}{S\arabic{table}}
+
+\begin{table}[h]
+\caption{IndoBERT Matched-Pipeline Results by Seed}
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Data} & \textbf{Seed} & $O/O$ & $N/N$ & $N/N-O/O$ \\
+\hline
+PRDECT & 13 & .9848 & .9734 & $-.0114$ \\
+ & 37 & .9823 & .9886 & $+.0063$ \\
+ & 73 & .9861 & .9810 & $-.0051$ \\
+SmSA & 13 & .8905 & .9058 & $+.0153$ \\
+ & 37 & .8858 & .9008 & $+.0150$ \\
+ & 73 & .8726 & .9029 & $+.0303$ \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\raggedright\small Differences are paired by seed; the sample SDs of the three effects are .0090 and .0088, respectively. These SDs are distinct from conditional test-sample intervals.
+\end{table}
+
+\begin{table}[h]
+\caption{Matched-Pipeline Class F1 and Support}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllr rr}
+\hline
+\textbf{Data} & \textbf{Model} & \textbf{Class} & \textbf{$n$} & $O/O$ & $N/N$ \\
+\hline
+PRDECT & Word & Neg. & 412 & .9593 & .9666 \\
+ & & Pos. & 381 & .9547 & .9626 \\
+ & Char. & Neg. & 412 & .9618 & .9631 \\
+ & & Pos. & 381 & .9572 & .9585 \\
+ & BERT & Neg. & 412 & .9852 & .9820 \\
+ & & Pos. & 381 & .9836 & .9801 \\
+SmSA & Word & Neg. & 204 & .8426 & .8337 \\
+ & & Neu. & 88 & .5263 & .5674 \\
+ & & Pos. & 208 & .8363 & .8232 \\
+ & Char. & Neg. & 204 & .8145 & .8238 \\
+ & & Neu. & 88 & .5507 & .5612 \\
+ & & Pos. & 208 & .7990 & .8103 \\
+ & BERT & Neg. & 204 & .9372 & .9495 \\
+ & & Neu. & 88 & .7769 & .8248 \\
+ & & Pos. & 208 & .9348 & .9352 \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\raggedright\small Support $n$ counts distinct reviews. BERT F1 is the arithmetic mean of seed-specific F1 scores, not a pooled prediction score.
+\end{table}
+
+\begin{table}[!t]
+\caption{Fixed-Model Transitions: Seed Mean and Unique Reviews}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllll}
+\hline
+\textbf{Data} & \textbf{Model} & \textbf{Direction} & \textbf{Corrected} & \textbf{Introduced} \\
+\hline
+PRDECT & Word & $O\to N$ & 10 / 10 & 9 / 9 \\
+ & & $N\to O$ & 7 / 7 & 29 / 29 \\
+ & Char. & $O\to N$ & 5 / 5 & 1 / 1 \\
+ & & $N\to O$ & 8 / 8 & 17 / 17 \\
+ & BERT & $O\to N$ & .67 / 1 & 1.33 / 3 \\
+ & & $N\to O$ & 1.67 / 5 & 1.67 / 4 \\
+SmSA & Word & $O\to N$ & 1 / 1 & 0 / 0 \\
+ & & $N\to O$ & 1 / 1 & 3 / 3 \\
+ & Char. & $O\to N$ & 2 / 2 & 0 / 0 \\
+ & & $N\to O$ & 1 / 1 & 1 / 1 \\
+ & BERT & $O\to N$ & .33 / 1 & .33 / 1 \\
+ & & $N\to O$ & 1.33 / 4 & 0 / 0 \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\raggedright\small Entries show mean / unique. Corrected and introduced mean incorrect-to-correct and correct-to-incorrect, respectively. For BERT, the mean is across seeds, and unique is the union of review IDs within the category; a review can appear in both categories across different seeds. $O\to N$ fixes the original-trained model; $N\to O$ fixes the normalized-trained model.
+\end{table}
+
+\begin{table}[!t]
+\caption{Retained Class Support by Split}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llll}
+\hline
+\textbf{Data} & \textbf{Train} & \textbf{Validation} & \textbf{Test} \\
+\hline
+PRDECT & 1922 / -- / 1780 & 412 / -- / 381 & 412 / -- / 381 \\
+SmSA & 3407 / 1136 / 6376 & 394 / 131 / 735 & 204 / 88 / 208 \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\raggedright\small Counts are negative / neutral / positive; PRDECT-ID has no neutral class. Splits and label mappings were fixed before evaluation.
+\end{table}
+
+\begin{table}[!t]
+\caption{Validation-Selected Settings and Final IndoBERT Epochs}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrll}
+\hline
+\textbf{Data} & \textbf{Cond.} & \textbf{Word $C$} & \textbf{Char. $C$} & \textbf{BERT LR} & \textbf{Epochs} \\
+\hline
+PRDECT & $O$ & 1 & 1 & $2\times10^{-5}$ & 2 / 3 / 3 \\
+ & $N$ & 1 & 1 & $2\times10^{-5}$ & 3 / 2 / 4 \\
+SmSA & $O$ & 1 & 1 & $2\times10^{-5}$ & 3 / 5 / 2 \\
+ & $N$ & 10 & 1 & $3\times10^{-5}$ & 2 / 4 / 5 \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\raggedright\small Epochs are best validation epochs for final seeds 13 / 37 / 73. Learning rates and $C$ were selected on validation; no test-based retuning was performed.
+\end{table}
+
+\section*{Artifact Availability and Reproduction}
+The local \texttt{review\_snapshot\_v2} includes manuscript sources, preview PDFs, code, and aggregate results; it excludes review-level inputs or predictions, dictionary mappings, weights, private payloads, and credentials. It is not public and grants no code license. \texttt{REPRODUCIBILITY.md} documents commands and tested limits. Exact replay requires private original artifacts; the full workflow was not rerun from the snapshot.
+
+PRDECT-ID's source states CC BY 4.0; the IndoBERT card states MIT. The pinned IndoNLU license file says Apache 2.0 but its README displays an MIT badge; SmSA terms remain unresolved. No explicit Kamus Alay license was identified.
+\end{document}

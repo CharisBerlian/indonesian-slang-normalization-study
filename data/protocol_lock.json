@@ -1,0 +1,26 @@
+{
+  "files": {
+    "configs/protocol.json": "6c1b824832e4b224fa31abd16d2fab53ae16a0cb050e1ff3a802c6831785fb63",
+    "configs/resources.json": "83db85f363d43f674be0adc8048376f3bd3652e60f1fb90b4208618b954f5cfa",
+    "data/processed/normalization_mapping.json": "1e2f3cdf732d81c2eaed13c350fd61c68ad7d1b60cd8d473b5a8b71ffc5e4cca",
+    "data/processed/tokenizer.json": "009b882b760e87416bb8f38a07dcc41b7fea117c75196462d761224a4b47fd9d",
+    "data/raw/alay.csv": "a8323c7bd8002622d7b4eb6232fc9843e91c8301e91cee87905e8609d3c7a8c3",
+    "data/raw/alay_README.md": "c9ed6bb2c11b80f542c4d5974739aee5c56cacddd2a323178373011de8cee4ac",
+    "data/raw/bert_README.md": "4f99e0b3b1cb8da2783b6f2c74950177228152672b5ca6b1e74e1b5f4fb678f3",
+    "data/raw/bert_special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "data/raw/bert_tokenizer_config.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "data/raw/bert_vocab.txt": "35cfc7be6dc3ec71102248722f352830a8fd89b5a5dadb83d70c2f7794ddbc11",
+    "data/raw/indonlu_LICENSE": "bd9d250c0f04338b3d3570e3ccbfba8d821d1d767f929e2f5884a250fe51dff0",
+    "data/raw/indonlu_README.md": "4761f00d5fed354b5ded15aeb3fa969d7c27ba5a206a41f42627bbc91b608f54",
+    "data/raw/prdec.csv": "1dfdde6bb169ad57aab4211ecf45a75a4111b774ab43932f6d39c349bfd92bde",
+    "data/raw/smsa_test.tsv": "4e8016daa8e4e1b193f2a28a79d3a7804dd4e3f926a3ab7e8a64264f5f416a6f",
+    "data/raw/smsa_train.tsv": "50f38ceed9b31521bf1581e126620532cc9b790712938159a2cdcf6906977a9b",
+    "data/raw/smsa_valid.tsv": "6ab41ddc9d58a35086f05ebd2e209c74cb03d87d4f51d6abdfba674eafbefa74",
+    "data/splits/prdec.csv": "e80f48f55ea3673d34c84dadf68418fb4badbf0716aadd4ff43feb2c74619d79",
+    "data/splits/smsa.csv": "3d9e607b6293d6dd289239f17fedde03041e822ebc0eedb97781ec2c300a864f",
+    "src/audit_data.py": "e2189c1ab8e91a3cf4ccef061e6eb9e2160b2e77b08fbd5e8f8a651a3a818557",
+    "src/normalization.py": "d99d9560a631cf3c57b7f6708e96ffa41936a8679b2dda78ef1a30d951d583f8"
+  },
+  "protocol_id": "56a11ac3a8b5a70634a2b10af9f0f6c867b50cc298685d60001979d3eb86884a",
+  "status": "Data and preprocessing audit complete; no classifier training or test predictions"
+}

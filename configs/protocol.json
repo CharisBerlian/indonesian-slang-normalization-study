@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "normalization": "NFC; collapse whitespace; Unicode L/Nd complete tokens; casefold dictionary lookup; exclude ambiguous, empty and identity mappings; one pass",
+  "grouping": "Union shared canonical original and normalized strings in one key space, within each dataset",
+  "prdec_split": {"ratios": [0.70, 0.15, 0.15], "seed": 42, "algorithm": "descending group size; SHA256(seed:group_id) tie order; greedy minimize sum squared class deficits / targets plus 0.25 times squared total deficits / targets; train-valid-test tie order"},
+  "smsa_priority": ["test", "valid", "train"],
+  "tokenizer": {"class": "BertWordPieceTokenizer", "lowercase": true, "strip_accents": true, "clean_text": true, "handle_chinese_chars": true, "add_special_tokens": true},
+  "sequence_lengths": [128, 256, 512],
+  "training_length_coverage": 0.95,
+  "tfidf": {"word_ngram_range": [1,2], "character_ngram_range": [3,5], "min_df": 2, "word_max_features": 50000, "character_max_features": 100000, "sublinear_tf": true, "smooth_idf": true, "norm": "l2"},
+  "svm": {"C": [0.1,1,10], "seed":42,"loss":"squared_hinge","penalty":"l2","class_weight":null,"tol":0.0001,"max_iter":20000},
+  "indobert": {"learning_rates":[0.00002,0.00003,0.00005],"tuning_seed":42,"final_seeds":[13,37,73],"effective_batch_size":16,"epochs":5,"weight_decay":0.01,"warmup_fraction":0.10,"gradient_clip":1.0},
+  "evaluation": {
+    "primary_metric": "macro_f1",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 42,
+    "resampling_unit": "test equivalence group",
+    "paired_draws_shared_across_all_models_conditions_and_seeds": true,
+    "interval": "95% percentile, nominal, conditional on trained models",
+    "direct_contrasts": ["delta_word_svm - delta_character_svm", "delta_word_svm - mean_delta_indobert"],
+    "practical_margin_macro_f1": 0.01,
+    "margin_status": "Investigator-selected one percentage point, not a community standard; interpret interval relative to both zero and +/- margin; not a powered equivalence test",
+    "interpretation": "Recommend a practically supported gain only when the interval lower bound exceeds +0.01; otherwise distinguish uncertain, small positive, and harmful effects. Inspect per-class harms, introduced errors and processing cost separately."
+  }
+}

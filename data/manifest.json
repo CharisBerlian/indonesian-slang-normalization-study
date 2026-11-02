@@ -1,0 +1,92 @@
+{
+  "prdec_version": "10.17632/574v66hf2v.1",
+  "indonlu_commit": "ce728f6926a36174b9923dfe49d6a6839b6e9bb7",
+  "alay_commit": "c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b",
+  "indobert_revision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2",
+  "files": [
+    {
+      "path": "prdec.csv",
+      "url": "https://data.mendeley.com/public-files/datasets/574v66hf2v/files/f258d159-c678-42f1-9634-edf091a0b1f3/file_downloaded",
+      "sha256": "1dfdde6bb169ad57aab4211ecf45a75a4111b774ab43932f6d39c349bfd92bde",
+      "bytes": 1262177,
+      "retrieved_utc": "2026-11-01T14:11:27.304885+00:00"
+    },
+    {
+      "path": "smsa_train.tsv",
+      "url": "https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/train_preprocess.tsv",
+      "sha256": "50f38ceed9b31521bf1581e126620532cc9b790712938159a2cdcf6906977a9b",
+      "bytes": 2186718,
+      "retrieved_utc": "2026-11-01T14:11:28.110104+00:00"
+    },
+    {
+      "path": "smsa_valid.tsv",
+      "url": "https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/valid_preprocess.tsv",
+      "sha256": "6ab41ddc9d58a35086f05ebd2e209c74cb03d87d4f51d6abdfba674eafbefa74",
+      "bytes": 246974,
+      "retrieved_utc": "2026-11-01T14:11:28.585748+00:00"
+    },
+    {
+      "path": "smsa_test.tsv",
+      "url": "https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/dataset/smsa_doc-sentiment-prosa/test_preprocess.tsv",
+      "sha256": "4e8016daa8e4e1b193f2a28a79d3a7804dd4e3f926a3ab7e8a64264f5f416a6f",
+      "bytes": 75949,
+      "retrieved_utc": "2026-11-01T14:11:28.967145+00:00"
+    },
+    {
+      "path": "alay.csv",
+      "url": "https://raw.githubusercontent.com/nasalsabila/kamus-alay/c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b/colloquial-indonesian-lexicon.csv",
+      "sha256": "a8323c7bd8002622d7b4eb6232fc9843e91c8301e91cee87905e8609d3c7a8c3",
+      "bytes": 3093160,
+      "retrieved_utc": "2026-11-01T14:11:29.951763+00:00"
+    },
+    {
+      "path": "alay_README.md",
+      "url": "https://raw.githubusercontent.com/nasalsabila/kamus-alay/c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b/README.md",
+      "sha256": "c9ed6bb2c11b80f542c4d5974739aee5c56cacddd2a323178373011de8cee4ac",
+      "bytes": 708,
+      "retrieved_utc": "2026-11-01T14:11:30.420102+00:00"
+    },
+    {
+      "path": "indonlu_LICENSE",
+      "url": "https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/LICENSE",
+      "sha256": "bd9d250c0f04338b3d3570e3ccbfba8d821d1d767f929e2f5884a250fe51dff0",
+      "bytes": 11131,
+      "retrieved_utc": "2026-11-01T14:11:30.759082+00:00"
+    },
+    {
+      "path": "indonlu_README.md",
+      "url": "https://raw.githubusercontent.com/IndoNLP/indonlu/ce728f6926a36174b9923dfe49d6a6839b6e9bb7/README.md",
+      "sha256": "4761f00d5fed354b5ded15aeb3fa969d7c27ba5a206a41f42627bbc91b608f54",
+      "bytes": 5411,
+      "retrieved_utc": "2026-11-01T14:11:31.097444+00:00"
+    },
+    {
+      "path": "bert_vocab.txt",
+      "url": "https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/vocab.txt",
+      "sha256": "35cfc7be6dc3ec71102248722f352830a8fd89b5a5dadb83d70c2f7794ddbc11",
+      "bytes": 229167,
+      "retrieved_utc": "2026-11-01T14:11:31.556586+00:00"
+    },
+    {
+      "path": "bert_tokenizer_config.json",
+      "url": "https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/tokenizer_config.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2,
+      "retrieved_utc": "2026-11-01T14:11:31.965501+00:00"
+    },
+    {
+      "path": "bert_special_tokens_map.json",
+      "url": "https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/special_tokens_map.json",
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "bytes": 112,
+      "retrieved_utc": "2026-11-01T14:11:32.345726+00:00"
+    },
+    {
+      "path": "bert_README.md",
+      "url": "https://huggingface.co/indobenchmark/indobert-base-p1/resolve/c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2/README.md",
+      "sha256": "4f99e0b3b1cb8da2783b6f2c74950177228152672b5ca6b1e74e1b5f4fb678f3",
+      "bytes": 2712,
+      "retrieved_utc": "2026-11-01T14:11:32.770192+00:00"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+\section{Related Work}
+The Colloquial Indonesian Lexicon supplies informal--formal mappings, including ambiguous entries~\cite{salsabila2018}; IndoCollex instead evaluates normalization as a word-transformation task~\cite{wibowo2021}. Dictionary coverage or normalization accuracy alone does not establish downstream sentiment benefit. Babanejad et al.~\cite{babanejad2020} distinguish preprocessing at representation-learning and downstream stages, motivating our explicit separation of classifier training and evaluation inputs.
+
+IndoNLU provides SmSA and IndoBERT~\cite{wilie2020}; IndoBERTweet adapts an Indonesian encoder and vocabulary to Twitter~\cite{koto2021}. Siva et al.~\cite{siva2026} compare IndoBERT with an SVM combining word and character TF-IDF. Our comparison separates those TF-IDF representations and estimates their normalization effects on shared splits. PRDECT-ID~\cite{sutoyo2022} and resource collections such as NusaCrowd~\cite{cahyawijaya2023} support evaluation without new scraping or annotation.
+
+Table~\ref{tab:prior-work} summarizes the nearest preprocessing studies. Bustamin et al.~\cite{bustamin2025} combine dictionary lookup with edit distance. Budianoor et al.~\cite{budianoor2026} isolate a slang variant relative to a cleaning baseline, while Prichanti et al.~\cite{prichanti2026} compare bundled pipelines across representations. Kuswanto and Tanamal~\cite{kuswanto2026} report uncertainty for model comparisons and a preprocessing ablation for emotion classification. Our study combines an isolated substitution, separate representations, paired effects, and both fixed-model input directions; it does not claim that any one element is unprecedented.
+
+\begin{table*}[t]
+\caption{Closest Prior Studies and the Present Design}
+\label{tab:prior-work}
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.13\textwidth}>{\raggedright\arraybackslash}p{.12\textwidth}>{\raggedright\arraybackslash}p{.24\textwidth}>{\raggedright\arraybackslash}p{.23\textwidth}>{\raggedright\arraybackslash}p{.12\textwidth}}
+\hline
+\textbf{Study} & \textbf{Data} & \textbf{Intervention and models} & \textbf{Replication / uncertainty} & \textbf{Fixed-input switch} \\
+\hline
+Bustamin et al.~\cite{bustamin2025} & Tweets & Dictionary and edit distance; IndoBERT & Three training/testing runs & -- \\
+Budianoor et al.~\cite{budianoor2026} & Culinary comments & Slang versus cleaned baseline; IndoBERT & Seed 42 & -- \\
+Prichanti et al.~\cite{prichanti2026} & App reviews & Bundled processing; Word2Vec/logistic and IndoRoBERTa & Seed 42 & -- \\
+Kuswanto and Tanamal~\cite{kuswanto2026} & App reviews & Bundled ablation for emotion; IndoBERT variants & Three ablation seeds; paired intervals for model comparisons & -- \\
+This study & Two review sets & Isolated substitution; word, character and IndoBERT & Paired group intervals; three IndoBERT seeds & Both directions \\
+\hline
+\end{tabular}
+\par\vspace{2pt}\small Dashes indicate that a crossed fixed-model input comparison was not reported in the checked study; they do not imply that related analyses are impossible.
+\end{table*}

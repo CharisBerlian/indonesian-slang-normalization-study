@@ -1,0 +1,591 @@
+{
+  "protocol_id": "56a11ac3a8b5a70634a2b10af9f0f6c867b50cc298685d60001979d3eb86884a",
+  "selection_sha256": "160bc9442b8912dfdccd79d6e2788566a433a08fab87e28e6184f5cc55ed8b3d",
+  "generator_sha256": "94555dea638d7d52f7b75ea684ab9c7d3b3d9981bf31ea909b52671a97351e9e",
+  "dictionary": {
+    "active_mapping_keys": 4131,
+    "ambiguous_keys_skipped": 71,
+    "eligible_unique_keys": 4202,
+    "empty_value_rows": 0,
+    "identity_keys_skipped": 0,
+    "ineligible_key_rows": 158,
+    "rows": 15006
+  },
+  "datasets": {
+    "prdec": {
+      "release_rows": 5400,
+      "retained_rows": 5288,
+      "exclusions": {
+        "canonical_original_duplicate": 112
+      },
+      "split_summary": {
+        "test": {
+          "bert_truncated_ids_changed": 489,
+          "bert_untruncated_ids_changed": 489,
+          "casefold_character_sequence_changed": 489,
+          "changed_classes": {
+            "negative": 297,
+            "positive": 192
+          },
+          "changed_reviews": 489,
+          "classes": {
+            "negative": 412,
+            "positive": 381
+          },
+          "groups": 793,
+          "max_group_size": 1,
+          "replacement_tokens": 1527,
+          "reviews": 793,
+          "truncated_normalized": 4,
+          "truncated_original": 4,
+          "unchanged_classes": {
+            "negative": 115,
+            "positive": 189
+          },
+          "word_token_sequence_changed": 489
+        },
+        "train": {
+          "bert_truncated_ids_changed": 2224,
+          "bert_untruncated_ids_changed": 2225,
+          "casefold_character_sequence_changed": 2225,
+          "changed_classes": {
+            "negative": 1384,
+            "positive": 841
+          },
+          "changed_reviews": 2225,
+          "classes": {
+            "negative": 1922,
+            "positive": 1780
+          },
+          "groups": 3698,
+          "max_group_size": 3,
+          "replacement_tokens": 7020,
+          "reviews": 3702,
+          "truncated_normalized": 13,
+          "truncated_original": 14,
+          "unchanged_classes": {
+            "negative": 538,
+            "positive": 939
+          },
+          "word_token_sequence_changed": 2225
+        },
+        "valid": {
+          "bert_truncated_ids_changed": 471,
+          "bert_untruncated_ids_changed": 471,
+          "casefold_character_sequence_changed": 471,
+          "changed_classes": {
+            "negative": 295,
+            "positive": 176
+          },
+          "changed_reviews": 471,
+          "classes": {
+            "negative": 412,
+            "positive": 381
+          },
+          "groups": 792,
+          "max_group_size": 2,
+          "replacement_tokens": 1377,
+          "reviews": 793,
+          "truncated_normalized": 9,
+          "truncated_original": 9,
+          "unchanged_classes": {
+            "negative": 117,
+            "positive": 205
+          },
+          "word_token_sequence_changed": 471
+        }
+      },
+      "vector_survival": {
+        "word_original": {
+          "train": {
+            "rows": 3702,
+            "text_changed": 2225,
+            "changed_text_with_different_tfidf_vector": 2220,
+            "changed_text_with_identical_tfidf_vector": 5,
+            "all_rows_with_different_tfidf_vector": 2220,
+            "original_zero_vectors": 16,
+            "normalized_zero_vectors": 15
+          },
+          "valid": {
+            "rows": 793,
+            "text_changed": 471,
+            "changed_text_with_different_tfidf_vector": 469,
+            "changed_text_with_identical_tfidf_vector": 2,
+            "all_rows_with_different_tfidf_vector": 469,
+            "original_zero_vectors": 3,
+            "normalized_zero_vectors": 3
+          },
+          "test": {
+            "rows": 793,
+            "text_changed": 489,
+            "changed_text_with_different_tfidf_vector": 488,
+            "changed_text_with_identical_tfidf_vector": 1,
+            "all_rows_with_different_tfidf_vector": 488,
+            "original_zero_vectors": 2,
+            "normalized_zero_vectors": 2
+          }
+        },
+        "word_normalized": {
+          "train": {
+            "rows": 3702,
+            "text_changed": 2225,
+            "changed_text_with_different_tfidf_vector": 2221,
+            "changed_text_with_identical_tfidf_vector": 4,
+            "all_rows_with_different_tfidf_vector": 2221,
+            "original_zero_vectors": 19,
+            "normalized_zero_vectors": 15
+          },
+          "valid": {
+            "rows": 793,
+            "text_changed": 471,
+            "changed_text_with_different_tfidf_vector": 469,
+            "changed_text_with_identical_tfidf_vector": 2,
+            "all_rows_with_different_tfidf_vector": 469,
+            "original_zero_vectors": 4,
+            "normalized_zero_vectors": 3
+          },
+          "test": {
+            "rows": 793,
+            "text_changed": 489,
+            "changed_text_with_different_tfidf_vector": 489,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 489,
+            "original_zero_vectors": 2,
+            "normalized_zero_vectors": 2
+          }
+        },
+        "character_original": {
+          "train": {
+            "rows": 3702,
+            "text_changed": 2225,
+            "changed_text_with_different_tfidf_vector": 2225,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 2225,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 793,
+            "text_changed": 471,
+            "changed_text_with_different_tfidf_vector": 471,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 471,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 793,
+            "text_changed": 489,
+            "changed_text_with_different_tfidf_vector": 489,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 489,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        },
+        "character_normalized": {
+          "train": {
+            "rows": 3702,
+            "text_changed": 2225,
+            "changed_text_with_different_tfidf_vector": 2225,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 2225,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 793,
+            "text_changed": 471,
+            "changed_text_with_different_tfidf_vector": 471,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 471,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 793,
+            "text_changed": 489,
+            "changed_text_with_different_tfidf_vector": 489,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 489,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        }
+      }
+    },
+    "smsa": {
+      "release_rows": 12760,
+      "retained_rows": 12679,
+      "exclusions": {
+        "canonical_original_duplicate": 81
+      },
+      "split_summary": {
+        "test": {
+          "bert_truncated_ids_changed": 97,
+          "bert_untruncated_ids_changed": 97,
+          "casefold_character_sequence_changed": 97,
+          "changed_classes": {
+            "negative": 52,
+            "neutral": 15,
+            "positive": 30
+          },
+          "changed_reviews": 97,
+          "classes": {
+            "negative": 204,
+            "neutral": 88,
+            "positive": 208
+          },
+          "groups": 500,
+          "max_group_size": 1,
+          "replacement_tokens": 121,
+          "reviews": 500,
+          "truncated_normalized": 0,
+          "truncated_original": 0,
+          "unchanged_classes": {
+            "negative": 152,
+            "neutral": 73,
+            "positive": 178
+          },
+          "word_token_sequence_changed": 97
+        },
+        "train": {
+          "bert_truncated_ids_changed": 1413,
+          "bert_untruncated_ids_changed": 1413,
+          "casefold_character_sequence_changed": 1413,
+          "changed_classes": {
+            "negative": 562,
+            "neutral": 131,
+            "positive": 720
+          },
+          "changed_reviews": 1413,
+          "classes": {
+            "negative": 3407,
+            "neutral": 1136,
+            "positive": 6376
+          },
+          "groups": 10918,
+          "max_group_size": 2,
+          "replacement_tokens": 1742,
+          "reviews": 10919,
+          "truncated_normalized": 1,
+          "truncated_original": 1,
+          "unchanged_classes": {
+            "negative": 2845,
+            "neutral": 1005,
+            "positive": 5656
+          },
+          "word_token_sequence_changed": 1413
+        },
+        "valid": {
+          "bert_truncated_ids_changed": 189,
+          "bert_untruncated_ids_changed": 189,
+          "casefold_character_sequence_changed": 189,
+          "changed_classes": {
+            "negative": 72,
+            "neutral": 28,
+            "positive": 89
+          },
+          "changed_reviews": 189,
+          "classes": {
+            "negative": 394,
+            "neutral": 131,
+            "positive": 735
+          },
+          "groups": 1260,
+          "max_group_size": 1,
+          "replacement_tokens": 239,
+          "reviews": 1260,
+          "truncated_normalized": 0,
+          "truncated_original": 0,
+          "unchanged_classes": {
+            "negative": 322,
+            "neutral": 103,
+            "positive": 646
+          },
+          "word_token_sequence_changed": 189
+        }
+      },
+      "vector_survival": {
+        "word_original": {
+          "train": {
+            "rows": 10919,
+            "text_changed": 1413,
+            "changed_text_with_different_tfidf_vector": 1396,
+            "changed_text_with_identical_tfidf_vector": 17,
+            "all_rows_with_different_tfidf_vector": 1396,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 1260,
+            "text_changed": 189,
+            "changed_text_with_different_tfidf_vector": 188,
+            "changed_text_with_identical_tfidf_vector": 1,
+            "all_rows_with_different_tfidf_vector": 188,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 500,
+            "text_changed": 97,
+            "changed_text_with_different_tfidf_vector": 95,
+            "changed_text_with_identical_tfidf_vector": 2,
+            "all_rows_with_different_tfidf_vector": 95,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        },
+        "word_normalized": {
+          "train": {
+            "rows": 10919,
+            "text_changed": 1413,
+            "changed_text_with_different_tfidf_vector": 1400,
+            "changed_text_with_identical_tfidf_vector": 13,
+            "all_rows_with_different_tfidf_vector": 1400,
+            "original_zero_vectors": 1,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 1260,
+            "text_changed": 189,
+            "changed_text_with_different_tfidf_vector": 188,
+            "changed_text_with_identical_tfidf_vector": 1,
+            "all_rows_with_different_tfidf_vector": 188,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 500,
+            "text_changed": 97,
+            "changed_text_with_different_tfidf_vector": 95,
+            "changed_text_with_identical_tfidf_vector": 2,
+            "all_rows_with_different_tfidf_vector": 95,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        },
+        "character_original": {
+          "train": {
+            "rows": 10919,
+            "text_changed": 1413,
+            "changed_text_with_different_tfidf_vector": 1413,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 1413,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 1260,
+            "text_changed": 189,
+            "changed_text_with_different_tfidf_vector": 189,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 189,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 500,
+            "text_changed": 97,
+            "changed_text_with_different_tfidf_vector": 97,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 97,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        },
+        "character_normalized": {
+          "train": {
+            "rows": 10919,
+            "text_changed": 1413,
+            "changed_text_with_different_tfidf_vector": 1413,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 1413,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "valid": {
+            "rows": 1260,
+            "text_changed": 189,
+            "changed_text_with_different_tfidf_vector": 189,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 189,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          },
+          "test": {
+            "rows": 500,
+            "text_changed": 97,
+            "changed_text_with_different_tfidf_vector": 97,
+            "changed_text_with_identical_tfidf_vector": 0,
+            "all_rows_with_different_tfidf_vector": 97,
+            "original_zero_vectors": 0,
+            "normalized_zero_vectors": 0
+          }
+        }
+      }
+    }
+  },
+  "bert_tuning": {
+    "prdec_normalized": {
+      "best_epoch": 2,
+      "best_macro_f1": 0.9760012742404331,
+      "learning_rate": 2e-05,
+      "run_id": "prdec_normalized_tuning_seed42_lr2e-05"
+    },
+    "prdec_original": {
+      "best_epoch": 4,
+      "best_macro_f1": 0.9810536375582368,
+      "learning_rate": 2e-05,
+      "run_id": "prdec_original_tuning_seed42_lr2e-05"
+    },
+    "smsa_normalized": {
+      "best_epoch": 5,
+      "best_macro_f1": 0.9212577737665838,
+      "learning_rate": 3e-05,
+      "run_id": "smsa_normalized_tuning_seed42_lr3e-05"
+    },
+    "smsa_original": {
+      "best_epoch": 5,
+      "best_macro_f1": 0.919201571936212,
+      "learning_rate": 2e-05,
+      "run_id": "smsa_original_tuning_seed42_lr2e-05"
+    }
+  },
+  "bert_final": [
+    {
+      "dataset": "prdec",
+      "condition": "normalized",
+      "seed": 13,
+      "learning_rate": 2e-05,
+      "best_epoch": 3
+    },
+    {
+      "dataset": "prdec",
+      "condition": "normalized",
+      "seed": 37,
+      "learning_rate": 2e-05,
+      "best_epoch": 2
+    },
+    {
+      "dataset": "prdec",
+      "condition": "normalized",
+      "seed": 73,
+      "learning_rate": 2e-05,
+      "best_epoch": 4
+    },
+    {
+      "dataset": "prdec",
+      "condition": "original",
+      "seed": 13,
+      "learning_rate": 2e-05,
+      "best_epoch": 2
+    },
+    {
+      "dataset": "prdec",
+      "condition": "original",
+      "seed": 37,
+      "learning_rate": 2e-05,
+      "best_epoch": 3
+    },
+    {
+      "dataset": "prdec",
+      "condition": "original",
+      "seed": 73,
+      "learning_rate": 2e-05,
+      "best_epoch": 3
+    },
+    {
+      "dataset": "smsa",
+      "condition": "normalized",
+      "seed": 13,
+      "learning_rate": 3e-05,
+      "best_epoch": 2
+    },
+    {
+      "dataset": "smsa",
+      "condition": "normalized",
+      "seed": 37,
+      "learning_rate": 3e-05,
+      "best_epoch": 4
+    },
+    {
+      "dataset": "smsa",
+      "condition": "normalized",
+      "seed": 73,
+      "learning_rate": 3e-05,
+      "best_epoch": 5
+    },
+    {
+      "dataset": "smsa",
+      "condition": "original",
+      "seed": 13,
+      "learning_rate": 2e-05,
+      "best_epoch": 3
+    },
+    {
+      "dataset": "smsa",
+      "condition": "original",
+      "seed": 37,
+      "learning_rate": 2e-05,
+      "best_epoch": 5
+    },
+    {
+      "dataset": "smsa",
+      "condition": "original",
+      "seed": 73,
+      "learning_rate": 2e-05,
+      "best_epoch": 2
+    }
+  ],
+  "svm_selected": [
+    {
+      "dataset": "prdec",
+      "representation": "character",
+      "condition": "normalized",
+      "C": 1
+    },
+    {
+      "dataset": "prdec",
+      "representation": "character",
+      "condition": "original",
+      "C": 1
+    },
+    {
+      "dataset": "prdec",
+      "representation": "word",
+      "condition": "normalized",
+      "C": 1
+    },
+    {
+      "dataset": "prdec",
+      "representation": "word",
+      "condition": "original",
+      "C": 1
+    },
+    {
+      "dataset": "smsa",
+      "representation": "character",
+      "condition": "normalized",
+      "C": 1
+    },
+    {
+      "dataset": "smsa",
+      "representation": "character",
+      "condition": "original",
+      "C": 1
+    },
+    {
+      "dataset": "smsa",
+      "representation": "word",
+      "condition": "normalized",
+      "C": 10
+    },
+    {
+      "dataset": "smsa",
+      "representation": "word",
+      "condition": "original",
+      "C": 1
+    }
+  ]
+}

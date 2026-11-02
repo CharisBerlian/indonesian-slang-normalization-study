@@ -1,0 +1,219 @@
+{
+  "datasets": {
+    "prdec": {
+      "cross_split_original_or_normalized_overlap": 0,
+      "exclusions": {
+        "canonical_original_duplicate": 112
+      },
+      "exclusions_by_source_partition": {
+        "unassigned": 112
+      },
+      "groups_before_partition_filter": 5283,
+      "normalized_collision_conflicting_label_groups": 0,
+      "normalized_collision_groups": 4,
+      "release_partitions": {
+        "unassigned": 5400
+      },
+      "release_rows": 5400,
+      "retained_rows": 5288,
+      "selected_max_length": 128,
+      "splits": {
+        "test": {
+          "bert_truncated_ids_changed": 489,
+          "bert_untruncated_ids_changed": 489,
+          "casefold_character_sequence_changed": 489,
+          "changed_classes": {
+            "negative": 297,
+            "positive": 192
+          },
+          "changed_reviews": 489,
+          "classes": {
+            "negative": 412,
+            "positive": 381
+          },
+          "groups": 793,
+          "max_group_size": 1,
+          "replacement_tokens": 1527,
+          "reviews": 793,
+          "truncated_normalized": 4,
+          "truncated_original": 4,
+          "unchanged_classes": {
+            "negative": 115,
+            "positive": 189
+          },
+          "word_token_sequence_changed": 489
+        },
+        "train": {
+          "bert_truncated_ids_changed": 2224,
+          "bert_untruncated_ids_changed": 2225,
+          "casefold_character_sequence_changed": 2225,
+          "changed_classes": {
+            "negative": 1384,
+            "positive": 841
+          },
+          "changed_reviews": 2225,
+          "classes": {
+            "negative": 1922,
+            "positive": 1780
+          },
+          "groups": 3698,
+          "max_group_size": 3,
+          "replacement_tokens": 7020,
+          "reviews": 3702,
+          "truncated_normalized": 13,
+          "truncated_original": 14,
+          "unchanged_classes": {
+            "negative": 538,
+            "positive": 939
+          },
+          "word_token_sequence_changed": 2225
+        },
+        "valid": {
+          "bert_truncated_ids_changed": 471,
+          "bert_untruncated_ids_changed": 471,
+          "casefold_character_sequence_changed": 471,
+          "changed_classes": {
+            "negative": 295,
+            "positive": 176
+          },
+          "changed_reviews": 471,
+          "classes": {
+            "negative": 412,
+            "positive": 381
+          },
+          "groups": 792,
+          "max_group_size": 2,
+          "replacement_tokens": 1377,
+          "reviews": 793,
+          "truncated_normalized": 9,
+          "truncated_original": 9,
+          "unchanged_classes": {
+            "negative": 117,
+            "positive": 205
+          },
+          "word_token_sequence_changed": 471
+        }
+      }
+    },
+    "smsa": {
+      "cross_split_original_or_normalized_overlap": 0,
+      "exclusions": {
+        "canonical_original_duplicate": 81
+      },
+      "exclusions_by_source_partition": {
+        "train": 81
+      },
+      "groups_before_partition_filter": 12678,
+      "normalized_collision_conflicting_label_groups": 0,
+      "normalized_collision_groups": 1,
+      "release_partitions": {
+        "test": 500,
+        "train": 11000,
+        "valid": 1260
+      },
+      "release_rows": 12760,
+      "retained_rows": 12679,
+      "selected_max_length": 128,
+      "splits": {
+        "test": {
+          "bert_truncated_ids_changed": 97,
+          "bert_untruncated_ids_changed": 97,
+          "casefold_character_sequence_changed": 97,
+          "changed_classes": {
+            "negative": 52,
+            "neutral": 15,
+            "positive": 30
+          },
+          "changed_reviews": 97,
+          "classes": {
+            "negative": 204,
+            "neutral": 88,
+            "positive": 208
+          },
+          "groups": 500,
+          "max_group_size": 1,
+          "replacement_tokens": 121,
+          "reviews": 500,
+          "truncated_normalized": 0,
+          "truncated_original": 0,
+          "unchanged_classes": {
+            "negative": 152,
+            "neutral": 73,
+            "positive": 178
+          },
+          "word_token_sequence_changed": 97
+        },
+        "train": {
+          "bert_truncated_ids_changed": 1413,
+          "bert_untruncated_ids_changed": 1413,
+          "casefold_character_sequence_changed": 1413,
+          "changed_classes": {
+            "negative": 562,
+            "neutral": 131,
+            "positive": 720
+          },
+          "changed_reviews": 1413,
+          "classes": {
+            "negative": 3407,
+            "neutral": 1136,
+            "positive": 6376
+          },
+          "groups": 10918,
+          "max_group_size": 2,
+          "replacement_tokens": 1742,
+          "reviews": 10919,
+          "truncated_normalized": 1,
+          "truncated_original": 1,
+          "unchanged_classes": {
+            "negative": 2845,
+            "neutral": 1005,
+            "positive": 5656
+          },
+          "word_token_sequence_changed": 1413
+        },
+        "valid": {
+          "bert_truncated_ids_changed": 189,
+          "bert_untruncated_ids_changed": 189,
+          "casefold_character_sequence_changed": 189,
+          "changed_classes": {
+            "negative": 72,
+            "neutral": 28,
+            "positive": 89
+          },
+          "changed_reviews": 189,
+          "classes": {
+            "negative": 394,
+            "neutral": 131,
+            "positive": 735
+          },
+          "groups": 1260,
+          "max_group_size": 1,
+          "replacement_tokens": 239,
+          "reviews": 1260,
+          "truncated_normalized": 0,
+          "truncated_original": 0,
+          "unchanged_classes": {
+            "negative": 322,
+            "neutral": 103,
+            "positive": 646
+          },
+          "word_token_sequence_changed": 189
+        }
+      }
+    }
+  },
+  "dictionary": {
+    "active_mapping_keys": 4131,
+    "ambiguous_keys_skipped": 71,
+    "eligible_unique_keys": 4202,
+    "empty_value_rows": 0,
+    "identity_keys_skipped": 0,
+    "ineligible_key_rows": 158,
+    "rows": 15006
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "tokenizers": "0.22.1"
+  }
+}
