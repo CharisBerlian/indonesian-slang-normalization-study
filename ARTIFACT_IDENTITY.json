@@ -1,0 +1,23 @@
+{
+  "package_version": "3.0.0",
+  "study_title": "Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison",
+  "author": "Charis Berlian",
+  "resource_revisions": {
+    "prdec_version": "10.17632/574v66hf2v.1",
+    "indonlu_commit": "ce728f6926a36174b9923dfe49d6a6839b6e9bb7",
+    "alay_commit": "c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b",
+    "indobert_revision": "c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2"
+  },
+  "protocol_id": "56a11ac3a8b5a70634a2b10af9f0f6c867b50cc298685d60001979d3eb86884a",
+  "protocol_locked_file_count": 20,
+  "protocol_scope": "Original data/preprocessing audit; not later model selection",
+  "aggregate_result_sha256": {
+    "results/final_evaluation/paired_results.json": "d8687c26a16a2394ae8328da4d3a625939ee8cdc1d50d65718bf0cb2f45371ac",
+    "results/final_evaluation/fixed_model_diagnostics.json": "ae673901457de561be07bface2b29a6a778c1c26f6b12f43415441ca0c2149a1",
+    "results/final_evaluation/study_facts.json": "bf24101d861c5faa1eee33c56224e62275cafd5e752d22ccec01b20a0d7f2e26"
+  },
+  "package_file_hashes": "MANIFEST.json",
+  "repository_visibility": "private",
+  "reviewer_access": "pending",
+  "historical_transformer_provenance": "No whole-weight hashes before historical selection freeze; later execution hashes and validation-prediction reproduction are distinct evidence."
+}

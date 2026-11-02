@@ -20,4 +20,5 @@ try {
     $previewDirectory = Join-Path $PSScriptRoot '../output/pdf'
     New-Item -ItemType Directory -Force -Path $previewDirectory | Out-Null
     Copy-Item -LiteralPath 'build/main.pdf' -Destination (Join-Path $previewDirectory 'introduction_literature_review.pdf')
+    Copy-Item -LiteralPath 'build/main.pdf' -Destination (Join-Path $previewDirectory 'indonesian_slang_sentiment_full_study.pdf')
 } finally { Pop-Location }

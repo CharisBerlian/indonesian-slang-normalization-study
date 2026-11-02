@@ -8,11 +8,12 @@ import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='2.0.0'
+VERSION='3.0.0'
+SOURCE_OVERRIDES={'README.md':'REVIEW_SNAPSHOT.md', '.gitignore':'tools/review_gitignore', '.gitattributes':'tools/review_gitattributes'}
 ALLOWLIST=(
-    'REPRODUCIBILITY.md','REVIEW_SNAPSHOT.md',
+    'README.md','.gitignore','.gitattributes','REPRODUCIBILITY.md','REVIEW_SNAPSHOT.md','REVIEWER_GUIDE.md','ARTIFACT_IDENTITY.json',
     'configs/protocol.json','configs/resources.json','data/manifest.json','data/protocol_lock.json',
-    'requirements-audit-lock.txt','requirements-pilot-svm-lock.txt','requirements-figure-lock.txt','requirements-freeze.txt',
+    'requirements-audit-lock.txt','requirements-pilot-svm-lock.txt','requirements-figure-lock.txt','requirements-freeze.txt','requirements-workflow-lock.txt',
     'src/normalization.py','src/audit_data.py','src/fetch_resources.py','src/verify_frozen_protocol.py',
     'src/train_svm_pilot.py','src/train_svm_search.py','src/train_indobert_full.py',
     'src/evaluate_models.py','src/evaluate_indobert_test.py','src/evaluate_indobert_test_frozen.py',
@@ -32,7 +33,8 @@ ALLOWLIST=(
     'reports/audit_summary.json','reports/final_evaluation.md','reports/fixed_model_diagnostics.md',
     'reports/study_facts.md','reports/resource_availability.md',
     'results/final_evaluation/paired_results.json','results/final_evaluation/fixed_model_diagnostics.json',
-    'results/final_evaluation/study_facts.json','tools/build_review_snapshot.py',
+    'results/final_evaluation/study_facts.json','tools/build_review_snapshot.py','tools/verify_review_snapshot.py',
+    'tools/review_gitignore','tools/review_gitattributes',
 )
 SECRET_PATTERNS=(re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
                  re.compile(rb'(?i)authorization:\s*bearer\s+[A-Za-z0-9_.\-]{20,}'),
@@ -42,21 +44,22 @@ SECRET_PATTERNS=(re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,default=ROOT/'artifacts/review_snapshot_v2')
+    parser.add_argument('--output',type=Path,default=ROOT/'artifacts/review_snapshot_v3')
     args=parser.parse_args(); dest=args.output.resolve(); archive=dest.with_suffix('.zip'); digest_file=archive.with_suffix('.zip.sha256')
     if not dest.is_relative_to(ROOT.resolve()): raise ValueError('Snapshot must be inside the workspace')
     if dest.exists() or archive.exists() or digest_file.exists(): raise FileExistsError('Refusing to overwrite an existing snapshot or archive')
     if len(ALLOWLIST)!=len(set(ALLOWLIST)): raise ValueError('Duplicate allowlist path')
     payload={}
     for name in ALLOWLIST:
-        path=ROOT/name
+        path=ROOT/SOURCE_OVERRIDES.get(name,name)
         if not path.is_file() or path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()): raise ValueError(f'Missing or unsafe allowlist file: {name}')
         data=path.read_bytes()
         if path.suffix.lower() not in ('.pdf','.png') and any(p.search(data) for p in SECRET_PATTERNS):
             raise ValueError(f'Potential secret pattern in allowlisted file: {name}')
         payload[name]=data
     manifest={'version':VERSION,'created_utc':datetime.now(timezone.utc).isoformat(),
-              'scope':'Local aggregate-only review preparation; no public release or license grant',
+              'scope':'Aggregate-only review preparation; private GitHub; reviewer access pending; no public release or license grant',
+              'source_overrides':SOURCE_OVERRIDES,
               'exclusions':['raw or normalized reviews','dictionary data and mappings','row-level IDs, labels, splits, groups and predictions',
                             'token payloads and generated private scripts','credentials','model weights'],
               'scan_limit':'Allowlist and limited secret-pattern scan; not a legal, privacy, anonymization or permission determination.',

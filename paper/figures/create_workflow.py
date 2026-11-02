@@ -1,7 +1,7 @@
 """Draw the proposed study workflow as a vector PDF and a preview PNG.
 
 Run with Python containing reportlab and pypdfium2. The manuscript embeds
-the vector PDF; the PNG is a preview only. All stages describe planned work.
+the vector PDF; the PNG is a preview only. Stages match methodology A--E.
 """
 from pathlib import Path
 import math
@@ -22,10 +22,10 @@ ROOT = HERE.parent.parent
 OUTPUT = ROOT / "output" / "pdf"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 PDF = HERE / "proposed_workflow.pdf"
-W, H = 252, 406
+W, H = 252, 270
 c = canvas.Canvas(str(PDF), pagesize=(W, H), initialFontName="WorkflowSans")
-c.setTitle("Proposed workflow: Indonesian slang normalization study")
-c.setAuthor("Research manuscript working draft")
+c.setTitle("Study workflow: paired pipelines and fixed-model input switches")
+c.setAuthor("Charis Berlian")
 
 INK = HexColor("#222B33")
 EDGE = HexColor("#697780")
@@ -76,38 +76,54 @@ def arrow(points):
     c.drawPath(p, stroke=0, fill=1)
 
 
-# Resource inputs feed the audit: normalized equivalence is needed for grouping.
-box(4, 364, 117, 38, ["Public labeled reviews", "PRDECT-ID / SmSA"], BLUE, bold_first=True)
-box(131, 364, 117, 38, ["Kamus Alay", "Pin dictionary and rules"], YELLOW, bold_first=True)
-box(22, 300, 208, 44, ["Minimal cleanup and data audit", "Group O/N-equivalent reviews", "Freeze train / validation / test splits"], GREEN, bold_first=True)
-arrow([(62.5, 364), (62.5, 354), (94, 354), (94, 344)])
-arrow([(189.5, 364), (189.5, 354), (158, 354), (158, 344)])
+# The dictionary is fixed before the audit because normalized equivalence
+# participates in group formation. These are shared splits, not two data samples.
+box(4, 222, 244, 44, [
+    "1. Audit and shared splits (III-A)",
+    "PRDECT-ID / SmSA; Kamus Alay fixed first",
+    "Group original / normalized equivalents",
+    "Freeze train / validation / test splits",
+], GREEN, size=8.0, bold_first=True)
+arrow([(126, 222), (126, 206)])
 
-box(4, 242, 117, 38, ["Original condition (O)", "Minimal cleanup only"], CYAN, bold_first=True)
-box(131, 242, 117, 38, ["Normalized condition (N)", "Cleanup + substitution"], YELLOW, size=7.9, bold_first=True)
-arrow([(94, 300), (94, 290), (62.5, 290), (62.5, 280)])
-arrow([(158, 300), (158, 290), (189.5, 290), (189.5, 280)])
-
-# The enclosing panel represents repeated independent experiments, not an ensemble.
 c.setFillColor(HexColor(GRAY))
 c.setStrokeColor(EDGE)
 c.setLineWidth(0.55)
-c.roundRect(4, 164, 244, 58, 1.5, fill=1, stroke=1)
+c.roundRect(4, 154, 244, 52, 1.5, fill=1, stroke=1)
 c.setFillColor(INK)
 c.setFont("WorkflowSans-Bold", 8.2)
-c.drawCentredString(126, 208, "Independent classifiers under each condition")
-box(10, 172, 72, 27, ["Word TF-IDF", "+ linear SVM"], CYAN, size=7.8)
-box(90, 172, 72, 27, ["Character TF-IDF", "+ linear SVM"], CYAN, size=7.8)
-box(170, 172, 72, 27, ["IndoBERT", "fine-tuning"], CYAN, size=7.8)
-arrow([(62.5, 242), (62.5, 222)])
-arrow([(189.5, 242), (189.5, 222)])
+c.drawCentredString(126, 192, "2. Paired input conditions (III-B)")
+box(10, 160, 111, 24, ["Original (O)", "Minimal cleanup"], CYAN,
+    size=8.0, bold_first=True)
+box(131, 160, 111, 24, ["Normalized (N)", "Cleanup + substitution"], YELLOW,
+    size=8.0, bold_first=True)
+arrow([(126, 154), (126, 142)])
 
-box(22, 112, 208, 32, ["Train and select models", "Validation macro-F1; equal tuning budgets"], GRAY, size=8.0, bold_first=True)
-arrow([(126, 164), (126, 144)])
-box(22, 60, 208, 32, ["Held-out sentiment evaluation", "Matched pipelines + fixed-model input changes"], RED, size=8.0, bold_first=True)
-arrow([(126, 112), (126, 92)])
-box(22, 4, 208, 36, ["Normalization effect and error analysis", "Paired intervals; seed variability", "Corrected predictions / introduced errors"], OUTPUT_BLUE, size=8.0, bold_first=True)
-arrow([(126, 60), (126, 40)])
+# Independent classifiers per condition; this panel does not combine predictions.
+box(4, 88, 244, 54, [
+    "3. Train and select models (III-C)",
+    "Word SVM / Character SVM / IndoBERT",
+    "Train each model separately under O and N",
+    "Select using validation macro-F1",
+    "Freeze models before test evaluation",
+], BLUE, size=8.0, bold_first=True)
+
+# Two analyses of the same frozen models/test reviews, not sequential training
+# stages and not an ensemble. Stage 5 retains each model's fitted parameters.
+arrow([(126, 88), (126, 80), (62.5, 80), (62.5, 72)])
+arrow([(126, 88), (126, 80), (189.5, 80), (189.5, 72)])
+box(4, 4, 117, 68, [
+    "4. Pipelines (III-D)",
+    "N/N versus O/O",
+    "Macro-F1 differences",
+    "Paired intervals",
+], OUTPUT_BLUE, size=8.0, bold_first=True)
+box(131, 4, 117, 68, [
+    "5. Input switches (III-E)",
+    "O/O to O/N; N/N to N/O",
+    "Macro-F1 changes",
+    "Corrections and errors",
+], RED, size=8.0, bold_first=True)
 
 c.showPage()
 c.save()

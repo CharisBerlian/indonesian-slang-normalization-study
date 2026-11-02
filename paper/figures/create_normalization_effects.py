@@ -25,29 +25,25 @@ def main():
     plt.rcParams.update({'font.family':'DejaVu Sans','font.size':8,'pdf.fonttype':42,'ps.fonttype':42,
                          'axes.edgecolor':'#58636c','axes.labelcolor':'#28343d','xtick.color':'#28343d',
                          'ytick.color':'#28343d','axes.spines.top':False,'axes.spines.right':False})
-    fig,axes=plt.subplots(1,2,figsize=(7.3,3.65),sharex=True)
+    fig,ax=plt.subplots(figsize=(3.5,2.65))
     names=('Word SVM','Character SVM','IndoBERT')
     colors=('#245781','#33715c','#9a563d'); markers=('o','s','D')
-    for ax,ds,title in zip(axes,('prdec','smsa'),('PRDECT-ID','SmSA')):
-        ax.set_title(title,fontsize=10,fontweight='bold',pad=10,loc='left')
-        for x in (-.01,.01): ax.axvline(x,color='#a8afb5',lw=.8,ls=(0,(3,3)),zorder=0)
-        ax.axvline(0,color='#38454e',lw=1.0,zorder=0)
-        for y,model,color,marker in zip((2,1,0),('word','character','indobert'),colors,markers):
+    for x in (-.01,.01): ax.axvline(x,color='#a8afb5',lw=.8,ls=(0,(3,3)),zorder=0)
+    ax.axvline(0,color='#38454e',lw=1.0,zorder=0)
+    for ds,title,ys in zip(('prdec','smsa'),('PRDECT-ID','SmSA'),((6,5,4),(2,1,0))):
+        ax.text(-.49,ys[0]+.75,title,transform=ax.get_yaxis_transform(),fontsize=8,fontweight='bold',va='center')
+        for y,model,color,marker in zip(ys,('word','character','indobert'),colors,markers):
             entry=data['datasets'][ds]['models'][model]; point=entry['effect_across_seeds']['mean']; iv=entry['mean_effect_interval']
             ax.plot([iv['lower'],iv['upper']],[y,y],color=color,lw=1.55,solid_capstyle='round',zorder=2)
             ax.plot([iv['lower'],iv['upper']],[y,y],linestyle='none',marker='|',markersize=7,color=color,markeredgewidth=1,zorder=3)
             ax.scatter([point],[y],c=color,marker=marker,s=28,zorder=4,edgecolor='white',linewidth=.5)
-        ax.set_yticks((2,1,0),names); ax.set_ylim(-.55,2.55); ax.set_xlim(-extent,extent)
-        ax.spines['left'].set_visible(False); ax.tick_params(axis='y',length=0,pad=5)
-        ax.xaxis.set_major_locator(MaxNLocator(nbins=5)); ax.tick_params(axis='x',labelsize=7)
-        ax.set_xlabel('Normalized - original macro-F1',fontsize=8,labelpad=6)
-        sd=data['datasets'][ds]['models']['indobert']['effect_across_seeds']['sample_sd']
-        ax.text(0,-.34,f'IndoBERT effect seed SD: {sd:.4f}',transform=ax.transAxes,fontsize=7.2,color='#53616b',va='top')
-    fig.subplots_adjust(left=.145,right=.98,top=.84,bottom=.32,wspace=.42)
-    fig.text(.5,.07,'Points: pipeline effects. Bars: nominal 95% paired group-bootstrap intervals,',ha='center',fontsize=7.5,color='#28343d')
-    fig.text(.5,.025,'conditional on trained models. Dashed lines: investigator-selected +/-0.01 margin.',ha='center',fontsize=7.5,color='#28343d')
+    ax.set_yticks((6,5,4,2,1,0),names+names); ax.set_ylim(-.55,7.2); ax.set_xlim(-extent,extent)
+    ax.spines['left'].set_visible(False); ax.tick_params(axis='y',length=0,pad=5)
+    ax.xaxis.set_major_locator(MaxNLocator(nbins=5)); ax.tick_params(axis='x',labelsize=7)
+    ax.set_xlabel('Normalized - original macro-F1',fontsize=8,labelpad=5)
+    fig.subplots_adjust(left=.34,right=.98,top=.98,bottom=.20)
     PDF.parent.mkdir(parents=True,exist_ok=True); PAPER.parent.mkdir(parents=True,exist_ok=True)
-    fig.savefig(PDF,format='pdf',facecolor='white'); plt.close(fig)
+    fig.savefig(PDF,format='pdf',facecolor='white',metadata={'Author':'Charis Berlian','Title':'Normalization effects by dataset and model'}); plt.close(fig)
     shutil.copyfile(PDF,PAPER)
     doc=pdfium.PdfDocument(str(PDF)); page=doc[0]
     page.render(scale=3).to_pil().save(PNG)

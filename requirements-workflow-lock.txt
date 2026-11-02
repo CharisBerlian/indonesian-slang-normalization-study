@@ -1,0 +1,5 @@
+# Optional workflow regeneration; Windows with installed Arial fonts.
+reportlab==4.4.9
+pypdfium2==5.14.0
+Pillow==12.3.0
+charset-normalizer==3.5.2

@@ -1,118 +1,214 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
 \begin{document}
 \title{Supplement: Dictionary-Based Slang Normalization for Indonesian Sentiment Classification}
-\author{\IEEEauthorblockN{Working Draft}\IEEEauthorblockA{Authors and affiliations to be confirmed}}
+\author{\IEEEauthorblockN{Charis Berlian}\IEEEauthorblockA{Computer Science Department, School of Computer Science\\
+Bina Nusantara University\\
+Jakarta, Indonesia\\
+charis.berlian@binus.ac.id}}
 \maketitle
 These tables accompany the main manuscript and use its frozen held-out predictions. $O/N$ denotes training on original inputs and evaluating normalized inputs; the first symbol always denotes the training condition. Scores for the three IndoBERT seeds use the same held-out reviews and are not independent test samples. No additional model was trained or selected for these tables.
-\renewcommand{\thetable}{S\arabic{table}}
-
-\begin{table}[h]
-\caption{IndoBERT Matched-Pipeline Results by Seed}
-\centering\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrr}
-\hline
-\textbf{Data} & \textbf{Seed} & $O/O$ & $N/N$ & $N/N-O/O$ \\
-\hline
-PRDECT & 13 & .9848 & .9734 & $-.0114$ \\
- & 37 & .9823 & .9886 & $+.0063$ \\
- & 73 & .9861 & .9810 & $-.0051$ \\
-SmSA & 13 & .8905 & .9058 & $+.0153$ \\
- & 37 & .8858 & .9008 & $+.0150$ \\
- & 73 & .8726 & .9029 & $+.0303$ \\
-\hline
-\end{tabular}
-\par\vspace{2pt}\raggedright\small Differences are paired by seed; the sample SDs of the three effects are .0090 and .0088, respectively. These SDs are distinct from conditional test-sample intervals.
-\end{table}
-
-\begin{table}[h]
-\caption{Matched-Pipeline Class F1 and Support}
-\centering\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{lllr rr}
-\hline
-\textbf{Data} & \textbf{Model} & \textbf{Class} & \textbf{$n$} & $O/O$ & $N/N$ \\
-\hline
-PRDECT & Word & Neg. & 412 & .9593 & .9666 \\
- & & Pos. & 381 & .9547 & .9626 \\
- & Char. & Neg. & 412 & .9618 & .9631 \\
- & & Pos. & 381 & .9572 & .9585 \\
- & BERT & Neg. & 412 & .9852 & .9820 \\
- & & Pos. & 381 & .9836 & .9801 \\
-SmSA & Word & Neg. & 204 & .8426 & .8337 \\
- & & Neu. & 88 & .5263 & .5674 \\
- & & Pos. & 208 & .8363 & .8232 \\
- & Char. & Neg. & 204 & .8145 & .8238 \\
- & & Neu. & 88 & .5507 & .5612 \\
- & & Pos. & 208 & .7990 & .8103 \\
- & BERT & Neg. & 204 & .9372 & .9495 \\
- & & Neu. & 88 & .7769 & .8248 \\
- & & Pos. & 208 & .9348 & .9352 \\
-\hline
-\end{tabular}
-\par\vspace{2pt}\raggedright\small Support $n$ counts distinct reviews. BERT F1 is the arithmetic mean of seed-specific F1 scores, not a pooled prediction score.
-\end{table}
-
-\begin{table}[!t]
-\caption{Fixed-Model Transitions: Seed Mean and Unique Reviews}
-\centering\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{lllll}
-\hline
-\textbf{Data} & \textbf{Model} & \textbf{Direction} & \textbf{Corrected} & \textbf{Introduced} \\
-\hline
-PRDECT & Word & $O\to N$ & 10 / 10 & 9 / 9 \\
- & & $N\to O$ & 7 / 7 & 29 / 29 \\
- & Char. & $O\to N$ & 5 / 5 & 1 / 1 \\
- & & $N\to O$ & 8 / 8 & 17 / 17 \\
- & BERT & $O\to N$ & .67 / 1 & 1.33 / 3 \\
- & & $N\to O$ & 1.67 / 5 & 1.67 / 4 \\
-SmSA & Word & $O\to N$ & 1 / 1 & 0 / 0 \\
- & & $N\to O$ & 1 / 1 & 3 / 3 \\
- & Char. & $O\to N$ & 2 / 2 & 0 / 0 \\
- & & $N\to O$ & 1 / 1 & 1 / 1 \\
- & BERT & $O\to N$ & .33 / 1 & .33 / 1 \\
- & & $N\to O$ & 1.33 / 4 & 0 / 0 \\
-\hline
-\end{tabular}
-\par\vspace{2pt}\raggedright\small Entries show mean / unique. Corrected and introduced mean incorrect-to-correct and correct-to-incorrect, respectively. For BERT, the mean is across seeds, and unique is the union of review IDs within the category; a review can appear in both categories across different seeds. $O\to N$ fixes the original-trained model; $N\to O$ fixes the normalized-trained model.
-\end{table}
-
-\begin{table}[!t]
-\caption{Retained Class Support by Split}
-\centering\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{llll}
-\hline
-\textbf{Data} & \textbf{Train} & \textbf{Validation} & \textbf{Test} \\
-\hline
-PRDECT & 1922 / -- / 1780 & 412 / -- / 381 & 412 / -- / 381 \\
-SmSA & 3407 / 1136 / 6376 & 394 / 131 / 735 & 204 / 88 / 208 \\
-\hline
-\end{tabular}
-\par\vspace{2pt}\raggedright\small Counts are negative / neutral / positive; PRDECT-ID has no neutral class. Splits and label mappings were fixed before evaluation.
-\end{table}
-
-\begin{table}[!t]
-\caption{Validation-Selected Settings and Final IndoBERT Epochs}
-\centering\small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{llrrll}
-\hline
-\textbf{Data} & \textbf{Cond.} & \textbf{Word $C$} & \textbf{Char. $C$} & \textbf{BERT LR} & \textbf{Epochs} \\
-\hline
-PRDECT & $O$ & 1 & 1 & $2\times10^{-5}$ & 2 / 3 / 3 \\
- & $N$ & 1 & 1 & $2\times10^{-5}$ & 3 / 2 / 4 \\
-SmSA & $O$ & 1 & 1 & $2\times10^{-5}$ & 3 / 5 / 2 \\
- & $N$ & 10 & 1 & $3\times10^{-5}$ & 2 / 4 / 5 \\
-\hline
-\end{tabular}
-\par\vspace{2pt}\raggedright\small Epochs are best validation epochs for final seeds 13 / 37 / 73. Learning rates and $C$ were selected on validation; no test-based retuning was performed.
-\end{table}
-
 \section*{Artifact Availability and Reproduction}
-The local \texttt{review\_snapshot\_v2} includes manuscript sources, preview PDFs, code, and aggregate results; it excludes review-level inputs or predictions, dictionary mappings, weights, private payloads, and credentials. It is not public and grants no code license. \texttt{REPRODUCIBILITY.md} documents commands and tested limits. Exact replay requires private original artifacts; the full workflow was not rerun from the snapshot.
+The private \texttt{review\_snapshot\_v3} contains this manuscript revision, code, configurations, aggregate results, a reviewer guide, and SHA-256 file manifests. It excludes review-level inputs or predictions, dictionary mappings, weights, private payloads, and credentials. Reviewer access is pending; the package grants no code license. \texttt{REPRODUCIBILITY.md} distinguishes synthetic checks and PDF/figure builds from full training or exact replay, which require additional resources.
 
 PRDECT-ID's source states CC BY 4.0; the IndoBERT card states MIT. The pinned IndoNLU license file says Apache 2.0 but its README displays an MIT badge; SmSA terms remain unresolved. No explicit Kamus Alay license was identified.
+
+\section*{Pinned Resources and Protocol}
+\begingroup\small
+\noindent PRDECT-ID: DOI \texttt{10.17632/574v66hf2v.1}.\\
+SmSA/IndoNLU revision:\\
+\texttt{ce728f6926a36174b9923dfe49d6a6839b6e9bb7}\\
+Kamus Alay revision:\\
+\texttt{c710fa9f3f8d8727c24f3209f4f6a4b6ecaf6d8b}\\
+IndoBERT base phase 1 revision:\\
+\texttt{c2cd0b51ddce6580eb35263b39b0a1e5fb0a39e2}\\
+Joint data/preprocessing fingerprint (concatenate lines):\\
+\texttt{56a11ac3a8b5a70634a2b10af9f0f6c867b}\\
+\texttt{50cc298685d60001979d3eb86884a}
+\par\endgroup
+Retrieval URLs and file hashes are in \texttt{data/manifest.json}; the 20-file audit lock is in \texttt{data/protocol\_lock.json}. It identifies the data/preprocessing audit, not the later model selection.
+
+\section*{Representation-Change Diagnostics}
+A post hoc vector-survival diagnostic found that, among text-changed test reviews, word TF-IDF vectors changed for 488/489 under the original-fitted PRDECT-ID vocabulary and 489/489 under the normalized-fitted vocabulary; vectors changed for 95/97 under either fixed SmSA word vectorizer. Under either fixed character vectorizer, they changed for 489/489 and 97/97, respectively. These counts show any vector change, not the fate of each replacement.
+
+\renewcommand{\thetable}{S\arabic{table}}
+
+\begin{table}[!ht]
+\caption{IndoBERT Matched-Pipeline Results by Seed}
+\centering\small
+\renewcommand{\arraystretch}{1.06}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Seed} & \textbf{O/O} & \textbf{N/N} & \textbf{N/N $-$ O/O} \\
+\hline
+PRDECT-ID & 13 & 0.9848 & 0.9734 & $-$0.0114 \\
+\hline
+PRDECT-ID & 37 & 0.9823 & 0.9886 & +0.0063 \\
+\hline
+PRDECT-ID & 73 & 0.9861 & 0.9810 & $-$0.0051 \\
+\hline
+SmSA & 13 & 0.8905 & 0.9058 & +0.0153 \\
+\hline
+SmSA & 37 & 0.8858 & 0.9008 & +0.0150 \\
+\hline
+SmSA & 73 & 0.8726 & 0.9029 & +0.0303 \\
+\hline
+\end{tabular}
+\par\vspace{3pt}\raggedright\small Differences are paired by seed; sample standard deviations are 0.0090 for PRDECT-ID and 0.0088 for SmSA. The same test reviews recur across seeds; seed variability is distinct from conditional test-sample intervals.
+\end{table}
+\begin{table}[!ht]
+\caption{Matched-Pipeline Class F1 and Support}
+\centering\small
+\renewcommand{\arraystretch}{1.06}
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Model} & \textbf{Class} & \textbf{$n$} & \textbf{O/O} & \textbf{N/N} \\
+\hline
+PRDECT-ID & Word SVM & Negative & 412 & 0.9593 & 0.9666 \\
+\hline
+PRDECT-ID & Word SVM & Positive & 381 & 0.9547 & 0.9626 \\
+\hline
+PRDECT-ID & Character SVM & Negative & 412 & 0.9618 & 0.9631 \\
+\hline
+PRDECT-ID & Character SVM & Positive & 381 & 0.9572 & 0.9585 \\
+\hline
+PRDECT-ID & IndoBERT & Negative & 412 & 0.9852 & 0.9820 \\
+\hline
+PRDECT-ID & IndoBERT & Positive & 381 & 0.9836 & 0.9801 \\
+\hline
+SmSA & Word SVM & Negative & 204 & 0.8426 & 0.8337 \\
+\hline
+SmSA & Word SVM & Neutral & 88 & 0.5263 & 0.5674 \\
+\hline
+SmSA & Word SVM & Positive & 208 & 0.8363 & 0.8232 \\
+\hline
+SmSA & Character SVM & Negative & 204 & 0.8145 & 0.8238 \\
+\hline
+SmSA & Character SVM & Neutral & 88 & 0.5507 & 0.5612 \\
+\hline
+SmSA & Character SVM & Positive & 208 & 0.7990 & 0.8103 \\
+\hline
+SmSA & IndoBERT & Negative & 204 & 0.9372 & 0.9495 \\
+\hline
+SmSA & IndoBERT & Neutral & 88 & 0.7769 & 0.8248 \\
+\hline
+SmSA & IndoBERT & Positive & 208 & 0.9348 & 0.9352 \\
+\hline
+\end{tabular}
+\par\vspace{3pt}\raggedright\small Support counts distinct test reviews. IndoBERT F1 is the mean of seed-specific F1 scores, not a pooled prediction score.
+\end{table}
+\begin{table*}[t]
+\caption{Fixed-Model Macro-F1 Changes and Prediction Transitions}
+\centering\small
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Model} & \textbf{Direction} & \textbf{Macro-F1 change} & \textbf{Corrected} & \textbf{Introduced} \\
+\hline
+PRDECT-ID & Word SVM & $O\to N$ & +0.0013 & 10 / 10 & 9 / 9 \\
+\hline
+PRDECT-ID & Word SVM & $N\to O$ & $-$0.0277 & 7 / 7 & 29 / 29 \\
+\hline
+PRDECT-ID & Character SVM & $O\to N$ & +0.0051 & 5 / 5 & 1 / 1 \\
+\hline
+PRDECT-ID & Character SVM & $N\to O$ & $-$0.0113 & 8 / 8 & 17 / 17 \\
+\hline
+PRDECT-ID & IndoBERT & $O\to N$ & $-$0.0008 & 0.67 / 1 & 1.33 / 3 \\
+\hline
+PRDECT-ID & IndoBERT & $N\to O$ & +0.00001 & 1.67 / 5 & 1.67 / 4 \\
+\hline
+SmSA & Word SVM & $O\to N$ & +0.0016 & 1 / 1 & 0 / 0 \\
+\hline
+SmSA & Word SVM & $N\to O$ & $-$0.0056 & 1 / 1 & 3 / 3 \\
+\hline
+SmSA & Character SVM & $O\to N$ & +0.0030 & 2 / 2 & 0 / 0 \\
+\hline
+SmSA & Character SVM & $N\to O$ & +0.0025 & 1 / 1 & 1 / 1 \\
+\hline
+SmSA & IndoBERT & $O\to N$ & +0.0006 & 0.33 / 1 & 0.33 / 1 \\
+\hline
+SmSA & IndoBERT & $N\to O$ & +0.0023 & 1.33 / 4 & 0 / 0 \\
+\hline
+\end{tabular}
+\par\vspace{3pt}\raggedright\small Transition counts show mean / unique; macro-F1 changes average paired seed differences for IndoBERT. Corrected and introduced mean incorrect-to-correct and correct-to-incorrect. IndoBERT means average across seeds; unique counts are unions of review IDs within each category and can overlap across categories. $O\to N$ fixes the original-trained model; $N\to O$ fixes the normalized-trained model. Their differences are $O/N-O/O$ and $N/O-N/N$, respectively. The near-zero positive PRDECT-ID IndoBERT difference uses five decimals; other changes use four.
+\end{table*}
+\begin{table}[!ht]
+\caption{Retained Class Support by Split}
+\centering\small
+\renewcommand{\arraystretch}{1.06}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Split} & \textbf{Negative} & \textbf{Neutral} & \textbf{Positive} \\
+\hline
+PRDECT-ID & Train & 1,922 & -- & 1,780 \\
+\hline
+PRDECT-ID & Validation & 412 & -- & 381 \\
+\hline
+PRDECT-ID & Test & 412 & -- & 381 \\
+\hline
+SmSA & Train & 3,407 & 1,136 & 6,376 \\
+\hline
+SmSA & Validation & 394 & 131 & 735 \\
+\hline
+SmSA & Test & 204 & 88 & 208 \\
+\hline
+\end{tabular}
+\par\vspace{3pt}\raggedright\small Counts are distinct reviews. PRDECT-ID has no neutral class; splits and labels were fixed before evaluation.
+\end{table}
+\begin{table}[!ht]
+\caption{Validation-Selected Settings and Final IndoBERT Epochs}
+\centering\small
+\renewcommand{\arraystretch}{1.06}
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Condition} & \textbf{SVM $C$} & \textbf{IndoBERT LR} & \textbf{Epochs} \\
+\hline
+PRDECT-ID & O & 1 / 1 & $2\times10^{-5}$ & 2 / 3 / 3 \\
+\hline
+PRDECT-ID & N & 1 / 1 & $2\times10^{-5}$ & 3 / 2 / 4 \\
+\hline
+SmSA & O & 1 / 1 & $2\times10^{-5}$ & 3 / 5 / 2 \\
+\hline
+SmSA & N & 10 / 1 & $3\times10^{-5}$ & 2 / 4 / 5 \\
+\hline
+\end{tabular}
+\par\vspace{3pt}\raggedright\small SVM $C$ values are Word / Character. Epochs are best validation epochs for final seeds 13 / 37 / 73. Learning rates and $C$ were selected on validation; no test-based retuning was performed.
+\end{table}
+\begin{table}[!htbp]
+\caption{Tuning and Training Settings}
+
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{5pt}
+\setlength{\arrayrulewidth}{0.4pt}
+\begin{tabular}{|C{0.27\columnwidth}|C{0.63\columnwidth}|}
+\hline
+\textbf{Component} & \textbf{Setting} \\
+\hline
+Linear SVM & $C\in\{0.1,1,10\}$; unweighted classes; squared hinge loss with $L_2$ penalty \\
+\hline
+IndoBERT search & Learning rate $\in\{2,3,5\}\times10^{-5}$; tuning seed 42 \\
+\hline
+Optimization & AdamW; weight decay 0.01; effective batch size 16; gradient clipping at 1.0 \\
+\hline
+Schedule & Five epochs; 10\% linear warmup, followed by linear decay \\
+\hline
+Selection & Highest validation macro-F1; evaluation after each epoch for IndoBERT \\
+\hline
+Final runs & SVM: seed 42; IndoBERT: seeds 13, 37, 73 \\
+\hline
+\end{tabular}
+\end{table}
 \end{document}

@@ -4,6 +4,7 @@ __pycache__/
 /data/raw/
 /data/processed/
 /data/splits/
+/data/replacement_logs.jsonl
 /results/*
 !/results/final_evaluation/
 /results/final_evaluation/*
