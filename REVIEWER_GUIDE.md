@@ -1,6 +1,6 @@
-# Reviewer guide: package v4.0.0
+# Reviewer guide: package v5.0.0
 
-This guide identifies the exact recorded study and current manuscript revision. The package is publicly available at https://github.com/CharisBerlian/indonesian-slang-normalization-study. Venue anonymity requirements remain to be confirmed. It contains no review-level data or model weights.
+This guide identifies the exact recorded study and current manuscript revision. The package is publicly available at https://github.com/CharisBerlian/indonesian-slang-normalization-study. The author has chosen to retain the named-author version. It contains no review-level data or model weights.
 
 ## Exact study identity
 
@@ -27,7 +27,7 @@ Complete retrieval URLs and source-file SHA-256 values are in `data/manifest.jso
 | Effect plot (Fig. 2) | `paper/figures/create_normalization_effects.py`, aggregate `paired_results.json` |
 | Workflow (Fig. 1) | `paper/figures/create_workflow.py`, supplied vector PDF |
 | Seed and class results (Tables S1-S2) | `paired_results.json`, `reports/final_evaluation.md` |
-| Corrected/introduced counts and both input directions (Table S3) | `fixed_model_diagnostics.json`, `src/analyze_fixed_models.py` |
+| Corrected/introduced counts, both input directions, and exploratory conditional intervals (Table S3) | `fixed_model_diagnostics.json`, `src/analyze_fixed_models.py` |
 | Class supports and configurations (Tables S4-S6) | `reports/study_facts.md`, `results/final_evaluation/study_facts.json`, `configs/protocol.json` |
 | Prose and exact table entries | `paper/sections/`, `paper/supplement.tex`, bibliography and build scripts |
 
@@ -40,6 +40,8 @@ Paths above that omit a directory are under `results/final_evaluation/`. Tables 
 3. Make a second disposable working copy for tests and builds. Follow the environment commands in `REPRODUCIBILITY.md`; run the six synthetic test modules using their specified audit or SVM environment.
 4. Regenerate the aggregate effect plot and compile both PDFs. This checks presentation reproduction from aggregate evidence, not the original predictions. Compilation may change PDF timestamps/bytes; rebuilt PDFs need not retain archive manifest hashes. Keep the original extraction intact.
 
+Table S3 reports all 12 existing fixed-model intervals from the frozen aggregate diagnostics. These are post hoc, exploratory, nominal 95% percentile intervals using 2,000 paired test-group draws (seed 42); they exclude training uncertainty and have no simultaneous coverage. Intervals containing zero do not establish equivalence. No new experiment or test-based selection was performed for v5.
+
 The frozen margin remains 0.01 macro-F1; nominal test-group intervals are conditional on fitted models, and seed variability is separate. New analyses prompted by held-out findings must be identified as exploratory. Do not overwrite frozen experiment records.
 
 ## What requires additional resources
@@ -50,4 +52,4 @@ The frozen margin remains 0.01 macro-F1; nominal test-group intervals are condit
 
 ## Package validation record
 
-The preparation report is retained alongside the archive as `artifacts/review_snapshot_v4_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. The public repository supplies package access; full historical replay still requires the excluded private artifacts.
+The preparation report is retained alongside the archive as `artifacts/review_snapshot_v5_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. The public repository supplies package access; full historical replay still requires the excluded private artifacts.

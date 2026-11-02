@@ -1,6 +1,6 @@
 # Reproduction and review snapshot
 
-Current package: **v4.0.0**, accompanying the current six-page manuscript and two-page supplement. Start with `REVIEWER_GUIDE.md` for exact resource revisions and the paper-to-artifact map. `ARTIFACT_IDENTITY.json` records the original protocol fingerprint and aggregate hashes; `MANIFEST.json` binds every packaged file, including both PDFs. The repository is public at https://github.com/CharisBerlian/indonesian-slang-normalization-study. Versions 1, 2 and 3 are historical snapshots.
+Current package: **v5.0.0**, accompanying the current six-page manuscript and two-page supplement. Start with `REVIEWER_GUIDE.md` for exact resource revisions and the paper-to-artifact map. `ARTIFACT_IDENTITY.json` records the original protocol fingerprint and aggregate hashes; `MANIFEST.json` binds every packaged file, including both PDFs. The repository is public at https://github.com/CharisBerlian/indonesian-slang-normalization-study. Versions 1, 2, 3 and 4 are historical snapshots.
 
 Before running tests or builds, verify a clean extraction using `python tools/verify_review_snapshot.py --strict`. Keep that extraction unchanged and use a second working copy for commands that write outputs. The package verifier checks only the protocol files included in the snapshot; it does not substitute for reconstructing and verifying all 20 audit-locked files.
 

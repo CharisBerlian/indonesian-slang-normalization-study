@@ -1,7 +1,7 @@
 {
-  "package_version": "4.0.0",
+  "package_version": "5.0.0",
   "study_title": "Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison",
-  "author": "Charis Berlian",
+  "author": "Charis Theophilus Berlian",
   "resource_revisions": {
     "prdec_version": "10.17632/574v66hf2v.1",
     "indonlu_commit": "ce728f6926a36174b9923dfe49d6a6839b6e9bb7",

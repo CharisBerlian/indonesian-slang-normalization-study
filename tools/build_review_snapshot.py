@@ -8,7 +8,7 @@ import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='4.0.0'
+VERSION='5.0.0'
 SOURCE_OVERRIDES={'README.md':'REVIEW_SNAPSHOT.md', '.gitignore':'tools/review_gitignore', '.gitattributes':'tools/review_gitattributes'}
 ALLOWLIST=(
     'README.md','.gitignore','.gitattributes','REPRODUCIBILITY.md','REVIEW_SNAPSHOT.md','REVIEWER_GUIDE.md','ARTIFACT_IDENTITY.json',
@@ -44,7 +44,7 @@ SECRET_PATTERNS=(re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,default=ROOT/'artifacts/review_snapshot_v4')
+    parser.add_argument('--output',type=Path,default=ROOT/'artifacts/review_snapshot_v5')
     args=parser.parse_args(); dest=args.output.resolve(); archive=dest.with_suffix('.zip'); digest_file=archive.with_suffix('.zip.sha256')
     if not dest.is_relative_to(ROOT.resolve()): raise ValueError('Snapshot must be inside the workspace')
     if dest.exists() or archive.exists() or digest_file.exists(): raise FileExistsError('Refusing to overwrite an existing snapshot or archive')

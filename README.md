@@ -1,6 +1,6 @@
-# Indonesian slang normalization study: review package v4.0.0
+# Indonesian slang normalization study: review package v5.0.0
 
-This package accompanies the current six-page manuscript and two-page supplement for **Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison**, by Charis Berlian. Version 4 updates the manuscript, figures and review documentation; it does not replace the frozen experimental protocol or results. Versions 1, 2 and 3 remain historical snapshots.
+This package accompanies the current six-page manuscript and two-page supplement for **Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison**, by Charis Theophilus Berlian. Version 5 updates the full author name, affiliation formatting, and reporting of existing exploratory fixed-model intervals; it does not replace the frozen experimental protocol or results. Versions 1, 2, 3 and 4 remain historical snapshots.
 
 The [GitHub repository](https://github.com/CharisBerlian/indonesian-slang-normalization-study) is **public**. This named-author package is not anonymous. Public availability does not establish venue compliance or grant a project code license.
 
@@ -18,6 +18,6 @@ From a fresh extraction, `python tools/verify_review_snapshot.py --strict` verif
 
 The package contains current manuscript sources and PDFs, analysis and training source templates, frozen configurations, retrieval URLs and checksums, aggregate reports/results, synthetic tests, figures, and verification tools. The exact inventory is in `MANIFEST.json`; this README and the Git configuration files are included in that inventory.
 
-Raw/normalized reviews, dictionary mappings, row-level IDs, labels, splits, groups and predictions, token payloads, generated private scripts, credentials, and weights are excluded. Test fixtures contain constructed examples. No additional scraping, annotation or training is part of v4 preparation.
+Raw/normalized reviews, dictionary mappings, row-level IDs, labels, splits, groups and predictions, token payloads, generated private scripts, credentials, and weights are excluded. Test fixtures contain constructed examples. No additional scraping, annotation or training is part of v5 preparation.
 
 Synthetic checks, aggregate-figure regeneration, and manuscript builds need no excluded data. Audit reconstruction and new training require separately retrieved resources. Exact historical replay additionally requires the original private selections, weights and predictions; later transformer weight hashes must not be described as a pre-selection freeze. The original code has no project-level license grant. The bundled IEEEtran class retains its third-party LPPL notice.

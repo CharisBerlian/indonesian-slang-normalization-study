@@ -8,14 +8,15 @@
 \makeatother
 \begin{document}
 \title{Supplement: Dictionary-Based Slang Normalization for Indonesian Sentiment Classification}
-\author{\IEEEauthorblockN{Charis Berlian}\IEEEauthorblockA{Computer Science Department, School of Computer Science\\
-Bina Nusantara University\\
+\author{\IEEEauthorblockN{Charis Theophilus Berlian}\IEEEauthorblockA{\textit{Computer Science Department}\\
+\textit{School of Computer Science}\\
+\textit{Bina Nusantara University}\\
 Jakarta, Indonesia\\
 charis.berlian@binus.ac.id}}
 \maketitle
 These tables accompany the main manuscript and use its frozen held-out predictions. $O/N$ denotes training on original inputs and evaluating normalized inputs; the first symbol always denotes the training condition. Scores for the three IndoBERT seeds use the same held-out reviews and are not independent test samples. No additional model was trained or selected for these tables.
 \section*{Artifact Availability and Reproduction}
-The public \texttt{review\_snapshot\_v4}, in the repository linked in the main paper's Acknowledgement, contains this manuscript revision, code, configurations, aggregate results, a reviewer guide, and SHA-256 file manifests. It excludes review-level inputs or predictions, dictionary mappings, weights, private payloads, and credentials. Public access does not grant a project code license. \texttt{REPRODUCIBILITY.md} distinguishes synthetic checks and PDF/figure builds from full training or exact replay, which require additional resources.
+The public \texttt{review\_snapshot\_v5}, in the repository linked in the main paper's Acknowledgement, contains this manuscript revision, code, configurations, aggregate results, a reviewer guide, and SHA-256 file manifests. It excludes review-level inputs or predictions, dictionary mappings, weights, private payloads, and credentials. Public access does not grant a project code license. \texttt{REPRODUCIBILITY.md} distinguishes synthetic checks and PDF/figure builds from full training or exact replay, which require additional resources.
 
 PRDECT-ID's source states CC BY 4.0; the IndoBERT card states MIT. The pinned IndoNLU license file says Apache 2.0 but its README displays an MIT badge; SmSA terms remain unresolved. No explicit Kamus Alay license was identified.
 
@@ -109,37 +110,37 @@ SmSA & IndoBERT & Positive & 208 & 0.9348 & 0.9352 \\
 \caption{Fixed-Model Macro-F1 Changes and Prediction Transitions}
 \centering\small
 \renewcommand{\arraystretch}{1.18}
-\setlength{\tabcolsep}{6pt}
-\begin{tabular}{|c|c|c|c|c|c|}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\textbf{Dataset} & \textbf{Model} & \textbf{Direction} & \textbf{Macro-F1 change} & \textbf{Corrected} & \textbf{Introduced} \\
+\textbf{Dataset} & \textbf{Model} & \textbf{Direction} & \textbf{Macro-F1 change} & \textbf{95\% CI} & \textbf{Corrected} & \textbf{Introduced} \\
 \hline
-PRDECT-ID & Word SVM & $O\to N$ & +0.0013 & 10 / 10 & 9 / 9 \\
+PRDECT-ID & Word SVM & $O\to N$ & +0.0013 & [$-$0.00883, +0.01268] & 10 / 10 & 9 / 9 \\
 \hline
-PRDECT-ID & Word SVM & $N\to O$ & $-$0.0277 & 7 / 7 & 29 / 29 \\
+PRDECT-ID & Word SVM & $N\to O$ & $-$0.0277 & [$-$0.04285, $-$0.01266] & 7 / 7 & 29 / 29 \\
 \hline
-PRDECT-ID & Character SVM & $O\to N$ & +0.0051 & 5 / 5 & 1 / 1 \\
+PRDECT-ID & Character SVM & $O\to N$ & +0.0051 & [$-$0.00003, +0.01145] & 5 / 5 & 1 / 1 \\
 \hline
-PRDECT-ID & Character SVM & $N\to O$ & $-$0.0113 & 8 / 8 & 17 / 17 \\
+PRDECT-ID & Character SVM & $N\to O$ & $-$0.0113 & [$-$0.02392, +0.00017] & 8 / 8 & 17 / 17 \\
 \hline
-PRDECT-ID & IndoBERT & $O\to N$ & $-$0.0008 & 0.67 / 1 & 1.33 / 3 \\
+PRDECT-ID & IndoBERT & $O\to N$ & $-$0.0008 & [$-$0.00339, +0.00169] & 0.67 / 1 & 1.33 / 3 \\
 \hline
-PRDECT-ID & IndoBERT & $N\to O$ & +0.00001 & 1.67 / 5 & 1.67 / 4 \\
+PRDECT-ID & IndoBERT & $N\to O$ & +0.00001 & [$-$0.00294, +0.00294] & 1.67 / 5 & 1.67 / 4 \\
 \hline
-SmSA & Word SVM & $O\to N$ & +0.0016 & 1 / 1 & 0 / 0 \\
+SmSA & Word SVM & $O\to N$ & +0.0016 & [+0.00000, +0.00497] & 1 / 1 & 0 / 0 \\
 \hline
-SmSA & Word SVM & $N\to O$ & $-$0.0056 & 1 / 1 & 3 / 3 \\
+SmSA & Word SVM & $N\to O$ & $-$0.0056 & [$-$0.01681, +0.00171] & 1 / 1 & 3 / 3 \\
 \hline
-SmSA & Character SVM & $O\to N$ & +0.0030 & 2 / 2 & 0 / 0 \\
+SmSA & Character SVM & $O\to N$ & +0.0030 & [+0.00000, +0.00762] & 2 / 2 & 0 / 0 \\
 \hline
-SmSA & Character SVM & $N\to O$ & +0.0025 & 1 / 1 & 1 / 1 \\
+SmSA & Character SVM & $N\to O$ & +0.0025 & [$-$0.00453, +0.01275] & 1 / 1 & 1 / 1 \\
 \hline
-SmSA & IndoBERT & $O\to N$ & +0.0006 & 0.33 / 1 & 0.33 / 1 \\
+SmSA & IndoBERT & $O\to N$ & +0.0006 & [$-$0.00151, +0.00335] & 0.33 / 1 & 0.33 / 1 \\
 \hline
-SmSA & IndoBERT & $N\to O$ & +0.0023 & 1.33 / 4 & 0 / 0 \\
+SmSA & IndoBERT & $N\to O$ & +0.0023 & [$-$0.00007, +0.00537] & 1.33 / 4 & 0 / 0 \\
 \hline
 \end{tabular}
-\par\vspace{3pt}\raggedright\small Transition counts show mean / unique; macro-F1 changes average paired seed differences for IndoBERT. Corrected and introduced mean incorrect-to-correct and correct-to-incorrect. IndoBERT means average across seeds; unique counts are unions of review IDs within each category and can overlap across categories. $O\to N$ fixes the original-trained model; $N\to O$ fixes the normalized-trained model. Their differences are $O/N-O/O$ and $N/O-N/N$, respectively. The near-zero positive PRDECT-ID IndoBERT difference uses five decimals; other changes use four.
+\par\vspace{3pt}\raggedright\small Transition counts show mean / unique; macro-F1 changes average paired seed differences for IndoBERT. Corrected and introduced mean incorrect-to-correct and correct-to-incorrect. IndoBERT means average across seeds; unique counts are unions of review IDs within each category and can overlap across categories. $O\to N$ fixes the original-trained model; $N\to O$ fixes the normalized-trained model. Their differences are $O/N-O/O$ and $N/O-N/N$, respectively. The near-zero positive PRDECT-ID IndoBERT difference uses five decimals; other changes use four; interval bounds use five. Intervals are post hoc, exploratory, nominal 95\% percentile intervals from the same 2,000 paired test-group draws (seed 42) as the primary evaluation. Each draw averages paired IndoBERT seed effects. They condition on fitted models, exclude training uncertainty, and have no simultaneous coverage; intervals containing zero do not establish equivalence.
 \end{table*}
 \begin{table}[!ht]
 \caption{Retained Class Support by Split}
