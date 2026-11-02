@@ -1,6 +1,6 @@
-# Reviewer guide: package v3.0.0
+# Reviewer guide: package v4.0.0
 
-This guide identifies the exact recorded study and current manuscript revision. The package is privately maintained; reviewer access and venue anonymity requirements remain pending. It contains no review-level data or model weights.
+This guide identifies the exact recorded study and current manuscript revision. The package is publicly available at https://github.com/CharisBerlian/indonesian-slang-normalization-study. Venue anonymity requirements remain to be confirmed. It contains no review-level data or model weights.
 
 ## Exact study identity
 
@@ -50,4 +50,4 @@ The frozen margin remains 0.01 macro-F1; nominal test-group intervals are condit
 
 ## Package validation record
 
-The preparation report is retained alongside the archive as `artifacts/review_snapshot_v3_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. Preparation does not make the package accessible to reviewers; access is a separate submission step.
+The preparation report is retained alongside the archive as `artifacts/review_snapshot_v4_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. The public repository supplies package access; full historical replay still requires the excluded private artifacts.

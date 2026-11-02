@@ -8,6 +8,7 @@
 \usepackage{url}
 \usepackage{array}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage[hidelinks]{hyperref}
 \begin{document}
 
 \title{Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison}
@@ -25,10 +26,15 @@ charis.berlian@binus.ac.id}}
 \input{sections/methodology}
 \input{sections/results}
 
+\section*{Acknowledgement}
+The author acknowledges the creators and maintainers of the resources used in this study. PRDECT-ID is available at \url{https://doi.org/10.17632/574v66hf2v.1}, and SmSA is provided through the IndoNLU repository at \url{https://github.com/IndoNLP/indonlu}.
 
+The Kamus Alay dictionary and IndoBERT base model are available at \url{https://github.com/nasalsabila/kamus-alay} and \url{https://huggingface.co/indobenchmark/indobert-base-p1}, respectively. The exact revisions and source checksums used are documented in the supplement and reproducibility package.
 
+Study code, configurations, aggregate results, and reproduction instructions are publicly available at \url{https://github.com/CharisBerlian/indonesian-slang-normalization-study}. Exact resource revisions and file checksums are included in the versioned review package.
+% Keep the References heading with its entries in the final right column.
+% Recheck this column break after substantive edits.
+\newpage
 \bibliographystyle{IEEEtran}
-% Balance the final columns for this revision; recheck after substantive edits.
-\IEEEtriggeratref{3}
 \bibliography{references}
 \end{document}

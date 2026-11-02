@@ -1,7 +1,7 @@
 {
-  "version": "3.0.0",
-  "created_utc": "2026-11-02T07:19:23.100032+00:00",
-  "scope": "Aggregate-only review preparation; private GitHub; reviewer access pending; no public release or license grant",
+  "version": "4.0.0",
+  "created_utc": "2026-11-02T09:26:56.823484+00:00",
+  "scope": "Public aggregate-only research package; no review-level data, model weights, or project code license grant",
   "source_overrides": {
     "README.md": "REVIEW_SNAPSHOT.md",
     ".gitignore": "tools/review_gitignore",
@@ -19,8 +19,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2882,
-      "sha256": "b2b9ea4234c25b8267a679536e72d1837fa5240769b0325c16047a6ebd89c42b"
+      "bytes": 2909,
+      "sha256": "65dcc8b3fb7559fd285f560e32795016432b8e0424e921018aaf750991231aaa"
     },
     {
       "path": ".gitignore",
@@ -34,23 +34,23 @@
     },
     {
       "path": "REPRODUCIBILITY.md",
-      "bytes": 15830,
-      "sha256": "6e938672573649aee6542b4e2e1c7e145253130385a8e4f406e4441be609d002"
+      "bytes": 15970,
+      "sha256": "4df490c3a9db2d087734a01bc7b874f7020eeaeda89adef59fb0152a401391b1"
     },
     {
       "path": "REVIEW_SNAPSHOT.md",
-      "bytes": 2882,
-      "sha256": "b2b9ea4234c25b8267a679536e72d1837fa5240769b0325c16047a6ebd89c42b"
+      "bytes": 2909,
+      "sha256": "65dcc8b3fb7559fd285f560e32795016432b8e0424e921018aaf750991231aaa"
     },
     {
       "path": "REVIEWER_GUIDE.md",
-      "bytes": 5147,
-      "sha256": "20ee6a35538b46add5ac857b60219b69c56a4b12acd4aaf055bd7346a4484d5e"
+      "bytes": 5275,
+      "sha256": "cb621083a84488d738a4e6932bbdd1a7a984dc3a826674a8b4e9ade58d17b9c0"
     },
     {
       "path": "ARTIFACT_IDENTITY.json",
-      "bytes": 1386,
-      "sha256": "30343ef25cf7c3dba4791f1c0da7ac0ab756e3560ef7c63f16297e94691b31f9"
+      "bytes": 1504,
+      "sha256": "b351f712119b7b570d7c2076d75dbaf572afb5c7cc60b46526b09f85a28d6da1"
     },
     {
       "path": "configs/protocol.json",
@@ -224,13 +224,13 @@
     },
     {
       "path": "paper/main.tex",
-      "bytes": 1055,
-      "sha256": "f97b633e67030726c8fab2cd0300454a7d73d75dc6206064b7180da36513fe83"
+      "bytes": 1980,
+      "sha256": "4371a7e7960ad7608d10b98e5a7c5561f07f41850cde43cf8dfdee7ba25bb915"
     },
     {
       "path": "paper/supplement.tex",
-      "bytes": 9454,
-      "sha256": "db2d6f046fcbb2cb449352c660866752c492be6cefde2123606d5d9b89246bf0"
+      "bytes": 9505,
+      "sha256": "eb042857d037ea5c4ab633f06df52681625d09044b639d01d3659d849c0bbb92"
     },
     {
       "path": "paper/references.bib",
@@ -269,8 +269,8 @@
     },
     {
       "path": "paper/sections/methodology.tex",
-      "bytes": 13620,
-      "sha256": "7dc530205b98cb445b2067d3dd7a6e9093d7e2a88dd34433de292be84337e702"
+      "bytes": 13634,
+      "sha256": "345972e0d062be79eb398208b858cfc3a219bed4b471aa9506ec0e18ac696b33"
     },
     {
       "path": "paper/sections/results.tex",
@@ -309,13 +309,13 @@
     },
     {
       "path": "output/pdf/indonesian_slang_sentiment_full_study.pdf",
-      "bytes": 338179,
-      "sha256": "7321c0c2fef5182078cb84e4d5b9b7f6d1e4305b011c41768281c3a400f7f085"
+      "bytes": 360516,
+      "sha256": "f957054eb163435bf7967f3e88d5812777be1279b9559f857af83e392d05e2de"
     },
     {
       "path": "output/pdf/indonesian_slang_sentiment_supplement.pdf",
-      "bytes": 115158,
-      "sha256": "62d142dd7a6189092e485b7f768cdfde89cf3395d308c4a67ac9d7b5a737015f"
+      "bytes": 115374,
+      "sha256": "37809d0f21b1a01e5703afc01d67ce05fe01c551857ba3b68df3e0cd6ad4bf1f"
     },
     {
       "path": "reports/audit_summary.json",
@@ -339,8 +339,8 @@
     },
     {
       "path": "reports/resource_availability.md",
-      "bytes": 4039,
-      "sha256": "1085ce3c77b6c0f4fb31e841ddbb68e425f9016c1935a40e17ceac91d4659242"
+      "bytes": 4083,
+      "sha256": "e0f8199e3249ce908d2f43d9dc4b8de32538a81e5dc46cd444b2e177ee841213"
     },
     {
       "path": "results/final_evaluation/paired_results.json",
@@ -359,8 +359,8 @@
     },
     {
       "path": "tools/build_review_snapshot.py",
-      "bytes": 5763,
-      "sha256": "fa3851aed8353f072090a2b48914a812f55458903e1142a9387ec614ef9ecf32"
+      "bytes": 5759,
+      "sha256": "26cba12d597be68d2fd16cf2403e291cbff4d9f33803f6370b52f0139c6fb87f"
     },
     {
       "path": "tools/verify_review_snapshot.py",

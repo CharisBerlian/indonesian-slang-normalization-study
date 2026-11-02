@@ -1,5 +1,5 @@
 {
-  "package_version": "3.0.0",
+  "package_version": "4.0.0",
   "study_title": "Dictionary-Based Slang Normalization for Indonesian Sentiment Classification: A Controlled Comparison",
   "author": "Charis Berlian",
   "resource_revisions": {
@@ -17,7 +17,8 @@
     "results/final_evaluation/study_facts.json": "bf24101d861c5faa1eee33c56224e62275cafd5e752d22ccec01b20a0d7f2e26"
   },
   "package_file_hashes": "MANIFEST.json",
-  "repository_visibility": "private",
-  "reviewer_access": "pending",
-  "historical_transformer_provenance": "No whole-weight hashes before historical selection freeze; later execution hashes and validation-prediction reproduction are distinct evidence."
+  "repository_visibility": "public",
+  "reviewer_access": "public aggregate-only repository",
+  "historical_transformer_provenance": "No whole-weight hashes before historical selection freeze; later execution hashes and validation-prediction reproduction are distinct evidence.",
+  "repository_url": "https://github.com/CharisBerlian/indonesian-slang-normalization-study"
 }
