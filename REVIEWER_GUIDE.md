@@ -1,4 +1,4 @@
-# Reviewer guide: package v6.0.0
+# Reviewer guide: package v7.0.0
 
 This guide identifies the exact recorded study and current manuscript revision. The package is publicly available at https://github.com/CharisBerlian/indonesian-slang-normalization-study. The author has chosen to retain the named-author version. It contains no review-level data or model weights.
 
@@ -40,7 +40,7 @@ Paths above that omit a directory are under `results/final_evaluation/`. Tables 
 3. Make a second disposable working copy for tests and builds. Follow the environment commands in `REPRODUCIBILITY.md`; run the six synthetic test modules using their specified audit or SVM environment.
 4. Regenerate the aggregate effect plot and compile both PDFs. This checks presentation reproduction from aggregate evidence, not the original predictions. Compilation may change PDF timestamps/bytes; rebuilt PDFs need not retain archive manifest hashes. Keep the original extraction intact.
 
-Table S3 reports all 12 existing fixed-model intervals from the frozen aggregate diagnostics. These are post hoc, exploratory, nominal 95% percentile intervals using 2,000 paired test-group draws (seed 42); they exclude training uncertainty and have no simultaneous coverage. Intervals containing zero do not establish equivalence. No new experiment or test-based selection was performed for v6.
+Table S3 reports all 12 existing fixed-model intervals from the frozen aggregate diagnostics. These are post hoc, exploratory, nominal 95% percentile intervals using 2,000 paired test-group draws (seed 42); they exclude training uncertainty and have no simultaneous coverage. Intervals containing zero do not establish equivalence. No new experiment or test-based selection was performed for v7.
 
 The frozen margin remains 0.01 macro-F1; nominal test-group intervals are conditional on fitted models, and seed variability is separate. New analyses prompted by held-out findings must be identified as exploratory. Do not overwrite frozen experiment records.
 
@@ -52,4 +52,4 @@ The frozen margin remains 0.01 macro-F1; nominal test-group intervals are condit
 
 ## Package validation record
 
-The preparation report is retained alongside the archive as `artifacts/review_snapshot_v6_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. The public repository supplies package access; full historical replay still requires the excluded private artifacts.
+The preparation report is retained alongside the archive as `artifacts/review_snapshot_v7_verification.md` in the author's workspace. It records the archive hash, extraction checks, fixture results and PDF-build comparison. It is external to the immutable archive so verification does not alter the files being verified. The public repository supplies package access; full historical replay still requires the excluded private artifacts.

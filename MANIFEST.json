@@ -1,6 +1,6 @@
 {
-  "version": "6.0.0",
-  "created_utc": "2026-11-12T07:51:39.339170+00:00",
+  "version": "7.0.0",
+  "created_utc": "2026-11-12T08:00:23.448171+00:00",
   "scope": "Public aggregate-only research package; no review-level data, model weights, or project code license grant",
   "source_overrides": {
     "README.md": "REVIEW_SNAPSHOT.md",
@@ -19,8 +19,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3000,
-      "sha256": "5f13284fb7b748a4b6939709b24e4025a0a19aa2d55bba9e8239ba2e00766d15"
+      "bytes": 2959,
+      "sha256": "6f532b0e7f7ce4a1068afa7767eb34e3c90c97e679a2ce005a1f2447a6518e5c"
     },
     {
       "path": ".gitignore",
@@ -34,23 +34,23 @@
     },
     {
       "path": "REPRODUCIBILITY.md",
-      "bytes": 15978,
-      "sha256": "605b4c72e9eaf78c97bc087d76640895d1fc7fef0226c88167355174d25536fc"
+      "bytes": 15981,
+      "sha256": "aa10242c9f876265920887582ffc78791342f299978e239e1fbc92eed280f671"
     },
     {
       "path": "REVIEW_SNAPSHOT.md",
-      "bytes": 3000,
-      "sha256": "5f13284fb7b748a4b6939709b24e4025a0a19aa2d55bba9e8239ba2e00766d15"
+      "bytes": 2959,
+      "sha256": "6f532b0e7f7ce4a1068afa7767eb34e3c90c97e679a2ce005a1f2447a6518e5c"
     },
     {
       "path": "REVIEWER_GUIDE.md",
       "bytes": 5715,
-      "sha256": "b68bc8ae91c2c4af2bd5279501ff0cbc249c3a210720720bed50714e259bae2b"
+      "sha256": "7730f34ab43240a8061b5f659629004b6617663cd5ed47be6e8e13090bfe5bf7"
     },
     {
       "path": "ARTIFACT_IDENTITY.json",
       "bytes": 1515,
-      "sha256": "b09d2d11376370c8e20ea14f0e498fd3d272e961c8e2e8b6a39c7350977e54d3"
+      "sha256": "b90e24637f7ec298bea30cbe51c056e263ed42aa087b7e9028966d45d4177828"
     },
     {
       "path": "configs/protocol.json",
@@ -230,7 +230,7 @@
     {
       "path": "paper/supplement.tex",
       "bytes": 10459,
-      "sha256": "c77e76555697ba35dd7bd3ca4b97d5fb988cee4413ebc19071dab65688826d56"
+      "sha256": "f6686388a4a0fcdae57c22e7db44652ad4ad41ab32b83c7abf8f3bb4d9ab96d9"
     },
     {
       "path": "paper/references.bib",
@@ -269,8 +269,8 @@
     },
     {
       "path": "paper/sections/methodology.tex",
-      "bytes": 13876,
-      "sha256": "ce977c165872270c9379ead28c934e3169891f9900b3e72bca70e5a2102b4cd5"
+      "bytes": 13777,
+      "sha256": "ad20408cb2f83c97193b087d2aaf4107627734151c9766f849a0223bf28cda68"
     },
     {
       "path": "paper/sections/results.tex",
@@ -309,13 +309,13 @@
     },
     {
       "path": "output/pdf/indonesian_slang_sentiment_full_study.pdf",
-      "bytes": 362122,
-      "sha256": "f91642e9ce2158b110a90dee24561fdbd2f72cd6e04781cd8f709cf7e143ae21"
+      "bytes": 362296,
+      "sha256": "a1f8e59141cf0d3f014437a48d99c7374c69efb0f16a9aa04792e78fcd220288"
     },
     {
       "path": "output/pdf/indonesian_slang_sentiment_supplement.pdf",
       "bytes": 129010,
-      "sha256": "0cacf3476ad19560af7808c51af0a1dc556086c54103226c9b7181415c38a434"
+      "sha256": "1821bfd0b1f74d2b394af8d00a588ebda4f45692cf82559927201141538b9f76"
     },
     {
       "path": "reports/audit_summary.json",
@@ -360,7 +360,7 @@
     {
       "path": "tools/build_review_snapshot.py",
       "bytes": 5839,
-      "sha256": "1a619c92726601fd8ca225ee500948a2818add9f37e178840f51339c7c4e20e1"
+      "sha256": "73f67f49e42ef8ab1f7b0303c3a5ce66c5cfccb0874de7d4ca999a547298a094"
     },
     {
       "path": "tools/verify_review_snapshot.py",
