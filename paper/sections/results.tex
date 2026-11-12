@@ -5,9 +5,7 @@
 
 Table~\ref{tab:conditions} shows all four training/input cells and the matched-pipeline effects with intervals.
 
-\par\medskip\noindent
-\begin{minipage}{\columnwidth}
-\makeatletter\def\@captype{table}\makeatother
+\begin{table}[!t]
 \caption{Held-Out Macro-F1 and Matched-Pipeline Effects}
 \label{tab:conditions}\label{tab:main-results}
 \centering\small
@@ -49,24 +47,20 @@ $\Delta$ & +0.0064 & +0.0103 & +0.0202 \\
 \hline
 \end{tabular}
 \par\vspace{3pt}\raggedright\small Training condition precedes evaluation input; $\Delta=N/N-O/O$. IndoBERT scores average three paired seeds. Intervals are nominal 95\% paired group-bootstrap intervals conditional on fitted models.
-\end{minipage}
-\par\medskip
+\end{table}
 
-On PRDECT-ID, the word SVM gained 0.0076 macro-F1, the character SVM gained 0.0013, and mean IndoBERT fell by 0.0034; all three nominal intervals include zero. On SmSA, the word and character SVM effects were 0.0064 and 0.0103, respectively, with intervals spanning zero. Mean IndoBERT improved by 0.0202, with an interval of [0.0037, 0.0381]. Although this interval is above zero, its lower bound is below the pre-experiment practical threshold of 0.01. Thus none of the six intervals supports a gain exceeding that threshold under the specified rule. Fig.~\ref{fig:effects} displays these estimates and intervals.
+On PRDECT-ID, the word SVM gained 0.0076 macro-F1, the character SVM gained 0.0013, and mean IndoBERT fell by 0.0034; all three nominal intervals include zero. On SmSA, the word and character SVM effects were 0.0064 and 0.0103, respectively, with intervals spanning zero. Mean IndoBERT improved by 0.0202, with an interval of [0.0037, 0.0381]. Although this interval is above zero, its lower bound is below the pre experiment practical threshold of 0.01. Thus none of the six intervals supports a gain exceeding that threshold under the specified rule. Fig.~\ref{fig:effects} displays these estimates and intervals.
 
-\par\medskip\noindent
-\begin{minipage}{\columnwidth}
-\makeatletter\def\@captype{figure}\makeatother
+\begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figures/normalization_effects.pdf}
-\caption{Normalization effects by dataset and model. Points show normalized-minus-original pipeline macro-F1; bars show nominal 95\% paired group-bootstrap intervals conditional on fitted models. Dashed lines mark the investigator-selected $\pm0.01$ reference margin.}
+\caption{Normalization effects by dataset and model. Points show normalized minus original pipeline macro-F1; bars show nominal 95\% paired group-bootstrap intervals conditional on fitted models. Dashed lines mark the investigator-selected $\pm0.01$ reference margin.}
 \label{fig:effects}
-\end{minipage}
-\par\medskip
+\end{figure}
 
 
 
-The paired standard deviations of the three IndoBERT effects were 0.0090 for PRDECT-ID and 0.0088 for SmSA. Supplementary Table S1 gives the seed-specific scores and differences. These describe training variation separately from the conditional test-sample intervals defined in Section~\ref{sec:methodology}.
+The paired standard deviations of the three IndoBERT effects were 0.0090 for PRDECT-ID and 0.0088 for SmSA. Supplementary Table S1 gives the seed specific scores and differences. These describe training variation separately from the conditional test-sample intervals defined in Section~\ref{sec:methodology}.
 
 \subsection{Direct Representation Contrasts}
 Table~\ref{tab:contrasts} reports the four predefined differences between normalization effects. All four intervals include zero. In particular, the apparently larger SmSA IndoBERT effect does not by itself establish that its normalization effect differs from the word SVM's effect.
@@ -99,25 +93,26 @@ SmSA & $D_{w,b}$ & $-$0.0138 & [$-$0.0384, +0.0105] \\
 \subsection{Coverage, Class, and Fixed-Model Diagnostics}
 The normalizer made 1,527 replacements in PRDECT-ID and 121 in SmSA, changing 489 of 793 and 97 of 500 test reviews, respectively. Changed SmSA reviews comprised 52 negative, 30 positive, and 15 neutral examples. All text-changed reviews also had different word-token sequences and truncated BERT token IDs. Post hoc vector-change counts are reported in the supplement; some text changes left word TF-IDF vectors unchanged. These are operational matches and representation changes, not verified slang prevalence.
 
-On SmSA, the word SVM's neutral-class F1 increased from 0.5263 to 0.5674, while negative and positive F1 declined from 0.8426 to 0.8337 and from 0.8363 to 0.8232, respectively. IndoBERT's mean neutral F1 increased from 0.7769 to 0.8248. The test set contains 88 neutral reviews, with limited normalization coverage as reported above. These class findings are descriptive, not separately adjusted tests; Supplementary Table S2 provides all class scores and supports.
+On SmSA, the word SVM's neutral class F1 increased from 0.5263 to 0.5674, while negative and positive F1 declined from 0.8426 to 0.8337 and from 0.8363 to 0.8232, respectively. IndoBERT's mean neutral F1 increased from 0.7769 to 0.8248. The test set contains 88 neutral reviews, with limited normalization coverage as reported above. These class findings are descriptive, not separately adjusted tests; Supplementary Table S2 provides all class scores and supports.
 
-The four cells in Table~\ref{tab:conditions} also distinguish both fixed-model input directions. Applying normalization to an original-trained model gives $O/N-O/O$; supplying original inputs to a normalized-trained model gives $N/O-N/N$. On PRDECT-ID, the word SVM changed by $+0.0013$ in the first direction (10 corrected versus 9 introduced errors) and by $-0.0277$ in the reverse direction (7 corrected versus 29 introduced errors). Thus the input switch can both repair and damage predictions, and its direction matters. Supplementary Table S3 reports all directional differences, seed-mean transition counts, unique-review counts, and post hoc exploratory intervals.
+The four cells in Table~\ref{tab:conditions} also distinguish both fixed model input directions. Applying normalization to an original trained model gives $O/N-O/O$; supplying original inputs to a normalized trained model gives $N/O-N/N$. On PRDECT-ID, the word SVM changed by $+0.0013$ in the first direction (10 corrected versus 9 introduced errors) and by $-0.0277$ in the reverse direction (7 corrected versus 29 introduced errors). Thus the input switch can both repair and damage predictions, and its direction matters. Supplementary Table S3 reports all directional differences, seed mean transition counts, unique-review counts, and post hoc exploratory intervals.
 
-For SmSA IndoBERT, the matched-pipeline change was $+0.0202$, whereas applying $N$ to the original-trained model changed macro-F1 by $+0.0006$ and changed one prediction per seed on average. The reverse input switch on the normalized-trained model changed macro-F1 by $+0.0023$. Their post hoc nominal 95\% intervals are [$-0.00151$, $+0.00335$] and [$-0.00007$, $+0.00537$], respectively, conditional on the fitted models. Both include zero; this does not establish equivalence. These comparisons do not causally separate substitution, retraining, or tuning.
+For SmSA IndoBERT, the matched pipeline change was $+0.0202$, whereas applying $N$ to the original trained model changed macro-F1 by $+0.0006$ and changed one prediction per seed on average. The reverse input switch on the normalized trained model changed macro-F1 by $+0.0023$. Their post hoc nominal 95\% intervals are [$-0.00151$, $+0.00335$] and [$-0.00007$, $+0.00537$], respectively, conditional on the fitted models. Both include zero; this does not establish equivalence. These comparisons do not causally separate substitution, retraining, or tuning.
 
 \section{Discussion and Limitations}
-The direct contrasts leave RQ1 unresolved: the data do not establish greater normalization benefits for the word model or equivalence between representations. For RQ2, effects differ descriptively across datasets: SmSA IndoBERT has a positive nominal interval, whereas PRDECT-ID IndoBERT does not. The PRDECT-ID word interval permits a small negative effect or a gain above 0.01; SmSA IndoBERT permits positive gains below or above that margin. For RQ3, input switches both correct and introduce errors, and their effects depend on the direction of substitution.
+Direct comparisons leave RQ1 unresolved: the data do not demonstrate greater normalization benefits for the word-based model, nor do they show equivalence between representations. Regarding RQ2, the effects differ descriptively across datasets. For SmSA, the IndoBERT model shows a positive nominal interval, whereas for PRDECT-ID, it does not. The word-level interval for PRDECT-ID allows for a small negative effect or a gain greater than 0.01. For SmSA, the IndoBERT model allows for positive gains either below or above that threshold. Regarding RQ3, input modifications both correct and introduce errors, with their effects depending on the direction of the substitution.
 
-The positive SmSA IndoBERT estimate is consistent in direction with Budianoor et al.'s normalization gain on culinary comments~\cite{budianoor2026}, but the uncertain PRDECT-ID result limits any broader recommendation. Bustamin et al.'s gains concern dictionary normalization combined with edit-distance correction~\cite{bustamin2025}, so they cannot be attributed to the same intervention tested here. Prichanti et al.'s representation-dependent preprocessing preferences~\cite{prichanti2026} likewise motivate evaluating each configuration; the present direct contrasts do not resolve differences between representations. Different datasets, metrics, and preprocessing policies preclude direct comparisons of gain magnitudes.
+The positive estimate for SmSA (IndoBERT) aligns in direction with the normalization gains reported by Budianoor et al. for culinary reviews~\cite{budianoor2026}; however, the uncertain result for PRDECT-ID limits the ability to make broader recommendations. The gains reported by Bustamin et al.~\cite{bustamin2025} relate to dictionary-based normalization combined with edit-distance-based correction, and therefore cannot be attributed to the specific intervention tested here. Furthermore, the representation-dependent preprocessing preferences noted by Prichanti et al.~\cite{prichanti2026} underscore the need to evaluate each configuration individually. The current direct comparisons do not resolve the differences between representations. Variations in datasets, metrics, and preprocessing policies preclude direct comparisons of the magnitude of these gains.
 
-For practice, the pipeline and fixed-model comparisons answer different decisions: whether to train with normalized text and whether to add substitution to an existing classifier. The SmSA IndoBERT pipeline gain accompanied very small fixed-model changes, so the pipeline result alone does not justify inference-only normalization. Potential explanations involving feature sharing, subword robustness, or training adaptation remain post hoc hypotheses. Both decisions require evaluation on data representative of the intended use.
+In practice, comparisons between the pipeline approach and the fixed-model approach address distinct decisions: whether to train using normalized text, and whether to incorporate substitution into an existing classifier. The gains observed with the SmSA (IndoBERT) pipeline were accompanied by only very minor changes in the fixed model; consequently, the pipeline result alone does not justify performing normalization solely at the inference stage. Potential explanations, such as feature shifting, subword robustness, or training-phase adaptation, remain post-hoc hypotheses. Both decisions require evaluation using data representative of the intended use.
 
-The findings are limited to two datasets, one dictionary policy, and one pretrained transformer. The small changed SmSA subset, particularly its 15 neutral reviews, limits class-specific interpretation. Dictionary matches are not independently verified slang annotations, and sentiment scores do not establish semantic preservation. IndoBERT uses only three seeds; the intervals exclude training uncertainty and offer no simultaneous coverage. Pretraining overlap cannot be excluded, and normalization-only runtime was not measured.
+The findings are limited to two datasets, a dictionary-based policy, and a pre-trained transformer. The small, modified SmSA subset, specifically its 15 neutral reviews, limits class-specific interpretation. Dictionary matches are not independently verified slang annotations, and sentiment scores do not guarantee semantic preservation. IndoBERT uses only three seeds; the intervals exclude training uncertainty and do not provide simultaneous coverage. Pre-training overlap cannot be ruled out, and execution time for normalization alone was not measured.
 
-The SVM selection was bound to local checkpoint hashes before test inference. The frozen IndoBERT selection recorded versioned checkpoint identifiers but not whole-weight hashes; all 12 cloud files were hashed subsequently and reproduced their saved validation predictions before held-out inference. This supports execution provenance without a pre-freeze cryptographic binding of the transformer weight bytes.
+The selection of the SVM was linked to the hashes of local checkpoints prior to test-set inference. The frozen IndoBERT selection recorded versioned checkpoint identifiers, but not full-weight hashes; the 12 cloud-based files were subsequently hashed, and their saved validation predictions were reproduced prior to holdout inference. This allows for the verification of execution provenance, even without a cryptographic link to the transformer's weight bytes established prior to freezing.
 
 \par\medskip\noindent
 \begin{minipage}{\columnwidth}
+\setlength{\parindent}{1em}
 \section{Conclusion}
 This study compared training with normalized text and switching inputs to fixed classifiers on shared audited reviews. The SmSA IndoBERT pipeline gain accompanied a much smaller inference-only change, while fixed-model switches both corrected and introduced errors. The contribution is evidence that a separately trained pipeline's benefit alone does not establish an inference-only benefit. Direct contrasts left representation differences unresolved, and no setting met the predefined practical-gain criterion. These findings support evaluating the two uses separately within each intended setting. Broader conclusions require additional datasets, dictionary policies, and measured preprocessing costs.
 \end{minipage}
